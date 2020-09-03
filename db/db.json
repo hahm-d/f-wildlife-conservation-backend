@@ -1,0 +1,473 @@
+{
+    "animals": [
+      {
+        "id": 1,
+        "name": "African Elephant",
+        "scientific_name": "Loxodonta africana",
+        "status": "Vulnerable",
+        "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/882/images/hero_full/African_Elephant_7.27.2012_hero_and_circle_HI_53941.jpg?1345532748",
+        "population": "415,000 in the wild",
+        "locations": ["Congo Basin", "Coastal East Africa"],
+        "facts": "The African elephant is the largest animal walking the Earth. Their herds wander through 37 countries in Africa. They are easily recognized by their trunk that is used for communication and handling objects. And their large ears allow them to radiate excess heat. Upper incisor teeth develop into tusks in African elephants and grow throughout their lifetime. There are two subspecies of African elephants—the Savanna (or bush) elephant and the Forest elephant. Savanna elephants are larger than forest elephants, and their tusks curve outwards. In addition to being smaller, forest elephants are darker and their tusks are straighter and point downward. There are also differences in the size and shape of the skull and skeleton between the two subspecies."
+        },
+      {
+        "id": 2,
+        "name": "African Wild Dog",
+        "scientific_name": "Lycaon pictus",
+        "status": "Endangered",
+        "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/10341/images/hero_full/wild_dogs-web.jpg?1447180370",
+        "population": "1,409 in the wild",
+        "locations": ["Coastal East Africa"],
+        "facts": "The wild dog is one of the world’s most endangered mammals. The largest populations remain in southern Africa and the southern part of East Africa (especially Tanzania and northern Mozambique). Wild dogs are social and gather in packs of around ten individuals, but some packs number more than 40. They are opportunistic predators that hunt medium-sized ruminants, such as gazelles. In a sprint, African wild dogs can reach speeds of more than 44 miles per hour."
+      },
+      {
+        "id": 3,
+        "name": "Albacore Tuna",
+        "scientific_name": "Thunnus alalunga",
+        "status": "Near-Threatened",
+        "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1466/images/story_full_width/tuna_102948248.jpg?1345545852",
+        "population": null,
+        "locations": ["The Galápagos", "Coral Triangle", "Coastal East Africa"],
+        "facts": "Albacore is one of the smaller tuna species, reaching sizes between skipjack and yellowfin. They are bullet-shaped with a dark blue back and lighter blue-gray sides and belly. Albacore tuna also have very long pectoral fins and live for around 12 years. They tend to travel in single species schools, without the level of mixing as seen in other species and migrate throughout all ocean waters and the Mediterranean."
+      },
+      {
+      "id": 4,
+      "name": "Amazon River Dolphin",
+      "scientific_name": "Scientific Name Inia geoffrensis",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/787/images/hero_full/Amazon_River_Dolphin_7.25.2012_Circle_and_Hero_XL_257657.jpg?1470325710",
+      "population": null,
+      "locations": ["Amazon"],
+      "facts": "The Amazon river dolphin, also known as the pink river dolphin or boto, lives only in freshwater. It is found throughout much of the Amazon and Orinoco river basins in Bolivia, Brazil, Colombia, Ecuador, Guyana, Peru, and Venezuela. It is a relatively abundant freshwater cetacean with an estimated population in the tens of thousands. However, it is classified as vulnerable in certain areas due to dams that fragment and threaten certain populations, and from other threats such as contamination of rivers and lakes."
+      },
+      {
+      "id": 5,
+      "name": "Amur Leopard",
+      "scientific_name": "Panthera pardus orientalis",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/878/images/hero_full/amur-leopard_99144569.jpg?1345532564",
+      "population": "More than 84 individuals",
+      "locations": ["Amur-Heilong"],
+      "facts": "The Amur leopard is solitary. Nimble-footed and strong, it carries and hides unfinished kills so that they are not taken by other predators. It has been reported that some males stay with females after mating, and may even help with rearing the young. Several males sometimes follow and fight over a female. They live for 10-15 years, and in captivity up to 20 years. The Amur leopard is also known as the Far East leopard, the Manchurian leopard or the Korean leopard."
+      },
+      {
+      "id": 6,
+      "name": "Arctic Fox",
+      "scientific_name": "Vulpes lagopus",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/540/images/hero_full/shutterstock_103864847.jpg?1345525295",
+      "population": "Several hundred thousand",
+      "locations": ["Polar Regions"],
+      "facts": "The Arctic fox is primarily a carnivore that lives inland, away from the coasts. They are dependent on the presence of smaller animals (most often lemmings) to survive.  Arctic foxes also hunt for sea birds, fish, and other marine life. Smaller rodent populations waver between times of abundance and scarcity, which leaves the Arctic fox vulnerable when these creatures are low in numbers."
+
+      },
+      {
+      "id": 7,
+      "name": "Arctic Wolf",
+      "scientific_name": "Canis lupus arctos",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/536/images/hero_full/shutterstock_78609682.jpg?1345525199",
+      "population": null,
+      "locations": ["Arctic"],
+      "facts": "Often called the 'polar wolf' or 'white wolf,' Arctic wolves inhabit the Arctic regions of North America and Greenland. Thanks to its isolation, the Arctic wolf is not threatened by hunting and habitat destruction in the same way as its southern relatives."
+      },
+      {
+      "id": 8,
+      "name": "Asian Elephant",
+      "scientific_name": "Elephas maximus indicus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/4836/images/hero_full/Asian_elephant_Kuiburi_Thailand.jpg?1376076815",
+      "population": "Fewer than 50,000",
+      "locations": ["Eastern Himalayas", "Greater Mekong"],
+      "facts": "The Asian elephant is the largest land mammal on the Asian continent. They inhabit dry to wet forest and grassland habitats in 13 range countries spanning South and Southeast Asia. While they have preferred forage plants, Asian elephants have adapted to surviving on resources that vary based on the area."
+      },
+      {
+      "id": 9,
+      "name": "Beluga",
+      "scientific_name": "Delphinapterus leucas",
+      "status": "Near-Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1960/images/hero_full/beluga_whale_Kevin_Schafer_WWF-Canon.jpg?1345556165",
+      "population": "over 150,000",
+      "locations": ["Arctic"],
+      "facts": "Many populations of belugas migrate as the sea ice changes in the Arctic. They move south in the fall as the ice forms and then return to feed again in the spring, as the ice breaks up. They can also be found near river mouths, and sometimes even venture up river. Belugas feed on a variety of fish species, such as salmon and herring, as well as shrimp, crabs and mollusks."
+
+      },
+      {
+      "id": 10,
+      "name": "Bigeye Tuna",
+      "scientific_name": "Thunnus obesus",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/2546/images/portrait_overview/Bigeye_tuna_above_with_small_yellowfin_and_net_western_Pacific_Ocean_ISSF_2012.jpg?1348250583",
+      "population": null,
+      "locations": ["The Galápagos", "Coral Triangle", "Gulf of California", "Coastal East Africa"],
+      "facts": "Bigeye tuna are generally the size of yellowfin, and smaller than bluefin. They are long and streamlined, have dark metallic blue on their backs and upper sides, and are nearly white on their lower sides and belly. They can live as long as 15 years. Bigeye are found in the subtropical and tropical areas of the Atlantic (but not in the Mediterranean), Indian and Pacific Oceans."
+      },
+      {
+      "id": 11,
+      "name": "Black Rhino",
+      "scientific_name": "Diceros bicornis",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1376/images/hero_full/Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg?1345543661",
+      "population": "More than 5,500",
+      "locations": ["Amazon"],
+      "facts": "Black rhinos are the smaller of the two African rhino species. The most notable difference between white and black rhinos are their hooked upper lip. This distinguishes them from the white rhino, which has a square lip. Black rhinos are browsers rather than grazers, and their pointed lip helps them feed on leaves from bushes and trees. They have two horns, and occasionally a third, small posterior horn."
+      },
+      {
+      "id": 12,
+      "name": "Black Spider Monkey",
+      "scientific_name": "Ateles paniscus",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1175/images/hero_full/Black_Spider_Monkey_8.1.2012_Hero_and_circle_HI_105023.jpg?1345587861",
+      "population": null,
+      "locations": ["Amazon"],
+      "facts": "The black spider monkey—also known as the Guiana or red-faced spider monkey—is found in eastern South America in areas north of the Amazon River. They are one of seven species of spider monkeys found in Latin America and one of the largest primate species in South America."
+      },
+      {
+      "id": 13,
+      "name": "Black-footed Ferret",
+      "scientific_name": "Mustela nigripes",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/10656/images/hero_full/cbolt_09232015_DSC5470.jpg?1452537306",
+      "population": "Approximately 370 in the wild",
+      "locations": ["Northern Great Plains"],
+      "facts": "Once thought to be globally extinct, black-footed ferrets are making a comeback. For the last thirty years, concerted efforts from many state and federal agencies, zoos, Native American tribes, conservation organizations and private landowners have given black-footed ferrets a second chance for survival. Today, recovery efforts have helped restore the black-footed ferret population to nearly 300 animals across North America. Although great strides have been made to recover the black-footed ferret, habitat loss and disease remain key threats to this highly endangered species."
+      },
+      {
+      "id": 14,
+      "name": "Blue Whale",
+      "scientific_name": "Balaenoptera musculus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18422/images/hero_full/shutterstock_764499823.jpg?1578408832",
+      "population": "10,000-25,000 individuals",
+      "locations": ["Southern Chile", "Gulf of California", "Coral Triangle"],
+      "facts": "The blue whale is the largest animal on the planet, weighing as much as 200 tons (approximately 33 elephants). The blue whale has a heart the size of a Volkswagen Beetle. Its stomach can hold one ton of krill and it needs to eat about four tons of krill each day. They are the loudest animals on Earth and are even louder than a jet engine. Their calls reach 188 decibels, while a jet reaches 140 decibels. Their low frequency whistle can be heard for hundreds of miles and is probably used to attract other blue whales."
+      },
+      {
+      "id": 15,
+      "name": "Bluefin Tuna",
+      "scientific_name": "Thunnus Thynnus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/2552/images/hero_full/Bluefin_tuna_253467.jpg?1348259069",
+      "population": null,
+      "locations": ["Coral Triangle"],
+      "facts": "Bluefin are the largest tunas and can live up to 40 years. They migrate across all oceans and can dive deeper than 3,000 feet. Bluefin tuna are made for speed: built like torpedoes, have retractable fins and their eyes are set flush to their body. They are tremendous predators from the moment they hatch, seeking out schools of fish like herring, mackerel, and even eels. They hunt by sight and have the sharpest vision of any bony fish. There are three species of bluefin: Atlantic (the largest and most endangered), Pacific, and Southern. Most catches of the Atlantic bluefin tuna are taken from the Mediterranean Sea, which is the most important bluefin tuna fishery in the world."
+
+      },
+      {
+      "id": 16,
+      "name": "Bonobo",
+      "scientific_name": "Pan paniscus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/15180/images/hero_full/_MA_8993.JPG?1518449593",
+      "population": "10,000 to 50,000",
+      "locations": ["Congo Basin"],
+      "facts": "Bonobos and chimpanzees look very similar and both share 98.7% of their DNA with humans—making the two species our closest living relatives. Bonobos are usually a bit smaller, leaner and darker than chimpanzees. Their society is also different—bonobo groups tend to be more peaceful and are led by females. They also maintain relationships and settle conflicts through sex. However, bonobo life isn’t entirely violence free; if two groups of bonobos come together, they may engage in serious fighting."
+
+      },
+      {
+      "id": 17,
+      "name": "Bornean Elephant",
+      "scientific_name": "Elephas maximus borneensis",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1667/images/hero_full/HI_113471.jpg?1345600398",
+      "population": "Estimated to be fewer than 1,500",
+      "locations": ["Borneo","Sumatra"],
+      "facts": "The smallest Asian elephant subspecies, Bornean elephants are distinctly smaller than their mainland cousins. They have long tails that sometimes touch the ground, relatively large ears, and straighter tusks. While they are also known as Borneo pygmy elephants due to their smaller size, at 8.2-9.8 feet tall, the Bornean elephant is the largest mammal on the island."
+
+      },
+      {
+      "id": 18,
+      "name": "Bornean Orangutan",
+      "scientific_name": "Pongo pygmaeus",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1145/images/hero_full/Bornean_Orangutan_8.1.2012_hero_and_circle_XL_279107.jpg?1345587030",
+      "population": "About 104,700",
+      "locations": ["Borneo","Sumatra"],
+      "facts": "Bornean orangutan populations have declined by more than 50% over the past 60 years, and the species' habitat has been reduced by at least 55% over the past 20 years."
+
+      },
+      {
+      "id": 19,
+      "name": "Bowhead Whale",
+      "scientific_name": "Balaena mysticetus",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/364/images/hero_full/XL_235565.jpg?1345520513",
+      "population": "Approximately 10,000",
+      "locations": ["Arctic"],
+      "facts": "Adult bowheads are entirely black except the front part of the lower jaw which is white and prominently upturned. They can grow up to 60 feet long while still being able to leap entirely out of water. Bowheads filter their food through baleen by opening their mouths and straining plankton from the surface, the water column, or the sea floor."
+      },
+      {
+      "id": 20,
+      "name": "Brown Bear",
+      "scientific_name": "Ursus arctos",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/16934/images/hero_full/Medium_WW266637.jpg?1551469111",
+      "population": "Approximately 110,000",
+      "locations": ["Arctic"],
+      "facts": "Few animals have captured the imagination like brown bears. They can stand on two legs, walk on the soles of their feet, pick things up with their “fingers,” and often eat what we eat. This—coupled with their ability to communicate with one another through scratch marks left on trees, smells and sounds—establishes a similarity to our own way of life. Some of the largest living carnivores, brown bears have fallen prey to hunting and other conflicts with humans."
+      },
+      {
+      "id": 21,
+      "name": "Chimpanzee",
+      "scientific_name": "Pan troglodytes",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18659/images/hero_full/Medium_WW215321.jpg?1581456540",
+      "population": "172,700 to 299,700",
+      "locations": ["Congo Basin"],
+      "facts": "Like us, chimps are highly social animals, care for their offspring for years and can live to be over 50. In fact, chimpanzees are our closest cousins; we share about 98% of our genes."
+
+      },
+      {
+      "id": 22,
+      "name": "Common Bottlenose Dolphin",
+      "scientific_name": "Tursiops truncates",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/12528/images/hero_full/Large_WW22277.jpg?1476749580",
+      "population": "600,000",
+      "locations": ["Ocean"],
+      "facts": "The bottlenose dolphin is recognized today as two distinct species—the common bottlenose dolphin and the Indo-Pacific bottlenose dolphin. The common bottlenose dolphin can be found around the world in tropical and temperate oceans. They live in groups numbering about a dozen individuals, and learn at an early age the complex social skills they need to survive. Dolphins live off fish, and they work cooperatively to herd their prey to the surface for easier feeding. Because they live so close to the shore, they are threatened by bycatch, coastal development and environmental degradation."
+
+      },
+      {
+      "id": 23,
+      "name": "Cross River Gorilla",
+      "scientific_name": "Gorilla gorilla diehli",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18410/images/hero_full/Medium_WW267197.jpg?1578345502",
+      "population": "200 to 300 individuals",
+      "locations": ["Congo Basin"],
+      "facts": "This subspecies of the western gorilla is very similar in appearance to the more numerous western lowland gorilla, but subtle differences can be found in the skull and tooth dimensions. Cross River gorillas live in a region populated by many humans who have encroached upon the gorilla’s territory—clearing forests for timber and to create fields for agriculture and livestock. Poaching occurs in the forests as well, and the loss of even a few of these gorillas has a detrimental effect on such a small population."
+
+      },
+      {
+      "id": 24,
+      "name": "Dugong",
+      "scientific_name": "Dugong dugon",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18406/images/hero_full/Medium_WW1221.jpg?1578344485",
+      "population": null,
+      "locations": ["Coastal East Africa", "Coral Triangle"],
+      "facts": "Dugongs are cousins of manatees and share a similar plump appearance, but have a dolphin fluke-like tail. And unlike manatees, which use freshwater areas, the dugong is strictly a marine mammal. Commonly known as 'sea cows', dugongs graze peacefully on sea grasses in shallow coastal waters of the Indian and western Pacific Oceans."
+
+      },
+      {
+      "id": 25,
+      "name": "Eastern Lowland Gorilla",
+      "scientific_name": "Gorilla beringei graueri",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1113/images/hero_full/eastern_lowland_gorilla_7.31.2012_hero_and_circle_HI_48384.jpg?1345586273",
+      "population": null,
+      "locations": ["Congo Basin"],
+      "facts": "The eastern lowland gorilla—also known as Grauer’s gorilla—is the largest of the four gorilla subspecies. It is distinguished from other gorillas by its stocky body, large hands and short muzzle. Despite its size, eastern lowland gorillas subsist mainly on fruit and other herbaceous materials, just like other gorilla subspecies."
+
+      },
+      {
+      "id": 26,
+      "name": "Fin Whale",
+      "scientific_name": "Balaenoptera physalus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/307/images/hero_full/Fin_Whale_Hero_and_Circle_Image_107654.jpg?1345568587",
+      "population": "Between 50,000-90,000",
+      "locations": ["Gulf of California", "Coral Triangle", "Arctic"],
+      "facts": "Some scientists have speculated that fin whales circle schools of fish with the white side facing the prey and frightening them into denser schools that are easier for the whale to catch. The fin whale, like other baleen whales, strains its food from the water through baleen plates."
+
+      },
+      {
+      "id": 27,
+      "name": "Galápagos Penguin",
+      "scientific_name": "Spheniscus mendiculus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18416/images/hero_full/flipMedium_WW1103163.jpg?1578347303",
+      "population": "fewer than 2000",
+      "locations": ["The Galápagos"],
+      "facts": "This is the only penguin species found north of the equator and in the Galápagos. "
+
+      },
+      {
+      "id": 28,
+      "name": "Ganges River Dolphin",
+      "scientific_name": "Platanista gangetica gangetica",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/820/images/hero_full/Ganges_River_Dolphin_7.26.2012_hero_and_circle_HI_114110.jpg?1345531213",
+      "population": "1,200–1,800",
+      "locations": ["Eastern Himalayas"],
+      "facts": "Dolphins are one of the oldest creatures in the world along with some species of turtles, crocodiles and sharks. The Ganges river dolphin was officially discovered in 1801. Ganges river dolphins once lived in the Ganges-Brahmaputra-Meghna and Karnaphuli-Sangu river systems of Nepal, India, and Bangladesh. But the species is extinct from most of its early distribution ranges."
+
+      },
+      {
+      "id": 29,
+      "name": "Giant Panda",
+      "scientific_name": "Ailuropoda melanoleuca",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18315/images/hero_full/Medium_WW230176.jpg?1576168323",
+      "population": "1,864 in the wild",
+      "locations": ["Yangtze"],
+      "facts": "The panda, with its distinctive black and white coat, is adored by the world and considered a national treasure in China. This bear also has a special significance for WWF because it has been our logo since our founding in 1961."
+
+      },
+      {
+      "id": 30,
+      "name": "Gray Whale",
+      "scientific_name": "Eschrichtius robustus",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/117/images/hero_full/Gray_Whale_Hero_image_%28c%29_naturepl.com_Mark_Carwardine_WWF.jpg?1345564347",
+      "population": "estimated 150 individuals (western population); stable (eastern population)",
+      "locations": ["Gulf of California", "Arctic"],
+      "facts": "Gray whales have a hump and a ridge of sharp bumps along their backs, instead of a dorsal fin. They are a type of baleen whale, which means they filter food from the water through special bristly structures in their mouths. Gray whales stay close to shore and feed in shallow water. Their well-known migrations take them between feeding and breeding areas, swimming as much as 12,000 miles round trip."
+
+      },
+      {
+      "id": 31,
+      "name": "Great White Shark",
+      "scientific_name": "Carcharodon carcharias",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1087/images/hero_full/Species_Great_White_Shark_WWF_Carlos_Aguilera.jpg?1345585501",
+      "population": null,
+      "locations": ["Gulf of California", "Southern Chile", "The Galápagos", "Coastal East Africa"],
+      "facts": "The great white shark is the world's largest known predatory fish. It has 300 teeth, yet does not chew its food. Sharks rip their prey into mouth-sized pieces which are swallowed whole. The shark’s heavy, torpedo-shaped body allows it to cruise efficiently for long periods of time, and then suddenly switch to high speed bursts in pursuit of prey—sometimes leaping out of the water. It feeds on a broad spectrum of prey, from small fish, such as halibut, to large seals and dolphins."
+
+      },
+      {
+      "id": 32,
+      "name": "Greater One-Horned Rhino",
+      "scientific_name": "Rhinoceros unicornis",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1385/images/hero_full/Greater_One_Horned_Rhino_8.6.2012_Hero_and_Circle_HI_107996.jpg?1345593410",
+      "population": "3,500+ individuals",
+      "locations": ["Eastern Himalayas"],
+      "facts": "The greater one-horned rhino (or “Indian rhino”) is the largest of the rhino species. Once widespread across the entire northern part of the Indian sub-continent, rhino populations plummeted as they were hunted for sport or killed as agricultural pests. This pushed the species very close to extinction and by the start of the 20th century, around 200 wild greater one-horned rhinos remained."
+
+      },
+      {
+      "id": 33,
+      "name": "Greater Sage-Grouse",
+      "scientific_name": "Centrocercus urophasianus",
+      "status": "Near-Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/343/images/hero_full/SCR_202579.jpg?1345569310",
+      "population": "100,000 to 500,000",
+      "locations": ["Northern Great Plains"],
+      "facts": "Greater sage-grouse were once found across 13 western U.S. states and 3 Canadian provinces. Unfortunately, because of oil and gas development, conversion of land for agricultural use, climate change and human development, sage-grouse only inhabit half their historic range. Well known for their spectacular mating dances performed on specific mating grounds called 'leks', these large birds are icons in the western U.S. and Canada."
+
+      },
+      {
+      "id": 34,
+      "name": "Green Turtle",
+      "scientific_name": "Chelonia mydas",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/322/images/hero_full/Green_Turtle_Hero_image_260214.jpg?1345519611",
+      "population": null,
+      "locations": ["Mesoamerican Reef", "Coastal East Africa", "Gulf of California", "The Galápagos", "Coral Triangle"],
+      "facts": "The green turtle is one of the largest sea turtles and the only herbivore among the different species. Green turtles are in fact named for the greenish color of their cartilage and fat, not their shells. In the Eastern Pacific, a group of green turtles that have darker shells are called black turtles by the local community. Green turtles are found mainly in tropical and subtropical waters. Like other sea turtles, they migrate long distances between feeding grounds and the beaches from where they hatched. Classified as endangered, green turtles are threatened by overharvesting of their eggs, hunting of adults, being caught in fishing gear and loss of nesting beach sites."
+
+      },
+      {
+      "id": 35,
+      "name": "Hawksbill Turtle",
+      "scientific_name": "Eretmochelys imbricata",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18418/images/hero_full/Medium_WW22305.jpg?1578407582",
+      "population": null,
+      "locations": ["Mesoamerican Reef", "Coastal East Africa", "Coral Triangle"],
+      "facts": "Hawksbills are named for their narrow, pointed beak. They also have a distinctive pattern of overlapping scales on their shells that form a serrated-look on the edges. These colored and patterned shells make them highly-valuable and commonly sold as 'tortoiseshell' in markets."
+
+      },
+      {
+      "id": 36,
+      "name": "Hector's Dolphin",
+      "scientific_name": "Cephalorhynchus hectori",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18412/images/hero_full/shutterstock_1205907409.jpg?1578345858",
+      "population": "estimated at 7000",
+      "locations": ["Ocean"],
+      "facts": "Hector’s dolphins are the smallest and rarest marine dolphins in the world. They have distinct black facial markings, short stocky bodies and a dorsal fin shaped like a Mickey Mouse ear. There is a subspecies of Hector’s dolphin known as Maui’s dolphin that is critically endangered and estimated to have a population of only 55. They are found only in the shallow coastal waters along western shores of New Zealand’s North Island."
+
+      },
+      {
+      "id": 37,
+      "name": "Hippopotamus",
+      "scientific_name": "Hippopotamus amphibius",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/16937/images/hero_full/Medium_WW1113453.jpg?1551472667",
+      "population": "115,000 to 130,000",
+      "locations": [],
+      "facts": "The hippopotamus, also known as the “river horse,” lives along the rivers and lakes throughout sub-Saharan Africa. Weighing up to 8,000 pounds, the hippo is the heaviest land animal after the elephant. Hippos seek refuge from the heat by living in water during the day, and at night they come ashore to feed on short, soft grasses and fallen fruit. The eyes and ears of a hippopotamus are on top of its head, so it can keep watch for enemies—mainly crocodiles—while lying low in the water. These giants are currently at risk from habitat loss."
+
+      },
+      {
+      "id": 38,
+      "name": "Humphead Wrasse",
+      "scientific_name": "Cheilinus undulatus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18408/images/hero_full/Medium_WW180520.jpg?1578344928",
+      "population": null,
+      "locations": ["Coral Triangle", "Coastal East Africa"],
+      "facts": "The humphead wrasse is an enormous coral reef fish—growing over six feet long—with a prominent bulge on its forehead. Some of them live to be over 30 years old. They roam through coral reefs in search of hard shelled prey such as mollusks, starfish, or crustaceans."
+
+      },
+      {
+      "id": 39,
+      "name": "Indian Elephant",
+      "scientific_name": "Elephas maximus indicus",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1713/images/hero_full/HI_47311.jpg?1345601529",
+      "population": "20,000 – 25,000",
+      "locations": ["India"],
+      "facts": "Indian elephants may spend up to 19 hours a day feeding and they can produce about 220 pounds of dung per day while wandering over an area that can cover up to 125 square miles. This helps to disperse germinating seeds. They feed mainly on grasses, but large amounts of tree bark, roots, leaves and small stems are also eaten. Cultivated crops such as bananas, rice and sugarcane are favored foods as well. Since they need to drink at least once a day, these elephants are always close to a source of fresh water."
+
+      },
+      {
+      "id": 40,
+      "name": "Indus River Dolphin",
+      "scientific_name": "Platanista minor",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/14861/images/hero_full/Indus_River_Dolphin.jpg?1513270520",
+      "population": "1,816",
+      "locations": ["Pakistan"],
+      "facts": "Indus river dolphins are believed to have originated in the ancient Tethys Sea. When the sea dried up approximately 50 million years ago, the dolphins were forced to adapt to its only remaining habitat—rivers. Today, they can only be found in the lower parts of the Indus River in Pakistan and in River Beas, a tributary of the Indus River in Punjab, India. In Pakistan, their numbers declined dramatically after the construction of an irrigation system, and most dolphins are confined to a 750 mile stretch of the river and divided into isolated populations by six barrages. They have adapted to life in the muddy river and are functionally blind. They rely on echolocation to navigate, communicate and hunt prey including prawns, catfish, and carp."
+
+      },
+      {
+      "id": 41,
+      "name": "Irrawaddy Dolphin",
+      "scientific_name": "Orcaella brevirostris",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/2715/images/hero_full/Mekong_Irrawaddy_Dolphin_breaching_%28c%29_WWF_Greater_Mekong.jpg?1421877230",
+      "population": null,
+      "locations": ["Greater Mekong"],
+      "facts": "Irrawaddy dolphins are found in coastal areas in South and Southeast Asia, and in three rivers: the Ayeyarwady (Myanmar), the Mahakam (Indonesian Borneo) and the Mekong. The Mekong River Irrawaddy dolphins inhabit a 118-mile stretch of the river between Cambodia and Lao PDR and are scarce—just 92 individuals are estimated to still exist. These dolphins have a bulging forehead, short beak, and 12-19 teeth on each side of both jaws."
+
+      },
+      {
+      "id": 42,
+      "name": "Jaguar",
+      "scientific_name": "Panthera onca",
+      "status": "Near Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1679/images/hero_full/Responsible_Forestry_8.10.2012_Biodiversiry_Loss_HI_7474.jpg?1345600687",
+      "population": null,
+      "locations": ["Amazon", "Pantanal"],
+      "facts": "Jaguars are strong swimmers and climbers and require large areas of tropical rain forest and stretches of riverbank to survive. Hunting and habitat loss due to deforestation continue to threaten the survival of these marvelous cats. WWF has worked with the government of Brazil to successfully protect large blocks of Amazon forest for the jaguar. In Peru, WWF continues to track jaguars to learn more about their habitat requirements."
+
+      },
+      {
+      "id": 43,
+      "name": "Javan Rhino",
+      "scientific_name": "Rhinoceros sondaicus",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/9496/images/hero_full/_H9A0249.jpg?1436885827",
+      "population": "58–68",
+      "locations": ["South-east Asia"],
+      "facts": "Javan rhinos are the most threatened of the five rhino species, with only 58-68 individuals that live only in Ujung Kulon National Park in Java, Indonesia. Javan rhinos once lived throughout northeast India and Southeast Asia. Vietnam’s last Javan rhino was poached in 2010."
+
+      },
+      {
+      "id": 44,
+      "name": "Leatherback Turtle",
+      "scientific_name": "Dermochelys coriacea",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/317/images/hero_full/SCR_289416.jpg?1345568766",
+      "population": null,
+      "locations": ["Mesoamerican Reef", "Coastal East Africa", "Gulf of California", "The Galápagos", "Coral Triangle"],
+      "facts": "They are the largest sea turtle species and also one of the most migratory, crossing both the Atlantic and Pacific Oceans. Pacific leatherbacks migrate from nesting beaches in the Coral Triangle all the way to the California coast to feed on the abundant jellyfish every summer and fall."
+      }
+    ]
+  }
