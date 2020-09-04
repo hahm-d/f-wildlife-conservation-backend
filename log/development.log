@@ -3096,3 +3096,484 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" ORDER BY "animals"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-09-04 10:29:31 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/daniel/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/daniel/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.3ms | Allocations: 315)
+Completed 200 OK in 27ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 2002)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:29:58 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (4.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 117ms (Views: 5.8ms | ActiveRecord: 5.6ms | Allocations: 23782)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:30:35 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 133ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11912)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:34:16 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 58ms (Views: 0.6ms | ActiveRecord: 2.1ms | Allocations: 11931)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:34:19 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 54ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 11909)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:34:39 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 60ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:35:23 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 64ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:36:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 68ms (Views: 0.8ms | ActiveRecord: 2.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:36:39 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 105ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:36:46 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:36:48 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 10:41:35 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 44ms (Views: 11.6ms | ActiveRecord: 4.2ms | Allocations: 4450)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 10:45:32 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 49ms (Views: 0.7ms | ActiveRecord: 1.3ms | Allocations: 11894)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-04 10:54:07 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/daniel/Flatiron/personal/f-wildlife-conservation-backend/app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+..., {includes: animals, searches}, status: :accepted
+...                              ^):
+  
+app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+Started POST "/api/v1/users" for ::1 at 2020-09-04 10:57:23 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/daniel/Flatiron/personal/f-wildlife-conservation-backend/app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+...), includes: animals, searches}, status: :accepted
+...                              ^):
+  
+app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:04:09 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 48ms (Views: 1.1ms | ActiveRecord: 3.4ms | Allocations: 23794)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:04:14 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 401 Unauthorized in 21ms (Views: 5.2ms | ActiveRecord: 1.3ms | Allocations: 4464)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-04 11:04:18 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Daniel"], ["password_digest", "$2a$10$tmrLWd6f9D5FwIuOOzGBHur7EbSSLd8yS42iDM7eosiLEQNOM9xh."], ["created_at", "2020-09-04 15:04:18.276524"], ["updated_at", "2020-09-04 15:04:18.276524"]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "Daniel"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.02ms)
+Completed 201 Created in 162ms (Views: 19.1ms | ActiveRecord: 5.5ms | Allocations: 10808)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:06:16 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 11931)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:06:24 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 86ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1082)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:07:04 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.26ms)
+Completed 202 Accepted in 95ms (Views: 8.6ms | ActiveRecord: 1.6ms | Allocations: 13136)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:10:12 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 141ms (Views: 6.3ms | ActiveRecord: 2.0ms | Allocations: 20728)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:10:13 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 81ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 11932)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:10:16 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 85ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1086)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:11:23 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11896)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:11:34 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11909)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:11:43 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.35ms)
+Completed 202 Accepted in 87ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1072)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:12:23 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:12:30 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:13:29 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:13:32 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:13:37 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:13:44 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11896)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:13:50 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:14:09 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:14:14 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:14:19 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1073)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:15:04 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:15:07 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 11916)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:15:14 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 88ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:15:18 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 202 Accepted in 84ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:15:30 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:16:04 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:16:05 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:16:09 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 73ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:16:12 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11917)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:16:15 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:17:04 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:17:15 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 88ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:17:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:17:35 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:17:48 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 89ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:17:57 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11910)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:17:59 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11903)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:18:04 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:18:38 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:18:46 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 89ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1073)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:19:17 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:19:32 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:20:02 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11897)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:20:13 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
