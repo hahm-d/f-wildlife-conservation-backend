@@ -4290,3 +4290,357 @@ Processing by Api::V1::AuthController#create as */*
 Completed 202 Accepted in 88ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
 
 
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 13:49:07 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (3.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 299ms (Views: 2.1ms | ActiveRecord: 6.4ms | Allocations: 23796)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 13:49:18 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritaplz", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritaplz", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritaplz"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 14ms (Views: 3.6ms | ActiveRecord: 0.8ms | Allocations: 4465)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 13:49:20 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritaplz", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritaplz", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritaplz"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-04 13:49:41 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "ritahartnell"], ["password_digest", "$2a$10$Oo/1LO3yTFIJy.oO0Tt8zeXJZvZWrvK20MBalmALxVQiMaS/RV9OC"], ["created_at", "2020-09-04 17:49:41.506259"], ["updated_at", "2020-09-04 17:49:41.506259"]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "ritahartnell"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.58ms)
+Completed 201 Created in 148ms (Views: 6.3ms | ActiveRecord: 5.3ms | Allocations: 10837)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" ORDER BY "animals"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFavorite Create (2.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["animal_id", 1], ["created_at", "2020-09-04 18:07:59.588569"], ["updated_at", "2020-09-04 18:07:59.588569"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (2.6ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["animal_id", 1], ["created_at", "2020-09-04 18:10:57.978963"], ["updated_at", "2020-09-04 18:10:57.978963"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:12:39 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (3.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 145ms (Views: 4.6ms | ActiveRecord: 3.2ms | Allocations: 11953)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:12:50 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.88ms)
+Completed 202 Accepted in 102ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1101)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:12:53 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 202 Accepted in 104ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1072)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:17:09 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (3.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 194ms (Views: 7.4ms | ActiveRecord: 5.9ms | Allocations: 22911)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:17:22 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 202 Accepted in 146ms (Views: 1.5ms | ActiveRecord: 2.2ms | Allocations: 8401)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:19:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 133ms (Views: 22.0ms | ActiveRecord: 4.0ms | Allocations: 22910)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:19:36 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 202 Accepted in 153ms (Views: 1.4ms | ActiveRecord: 1.9ms | Allocations: 8398)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:20:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 77ms (Views: 2.3ms | ActiveRecord: 3.3ms | Allocations: 22910)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:20:40 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 202 Accepted in 100ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 8398)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:22:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 54ms (Views: 2.0ms | ActiveRecord: 2.8ms | Allocations: 22910)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:22:15 -0400
+  
+SyntaxError (/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected '}', expecting =>
+...lude => {[:animals, :searches]}}, status: :accepted
+...                              ^):
+  
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected '}', expecting =>
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected '}', expecting =>
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:25:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 69ms (Views: 1.4ms | ActiveRecord: 1.9ms | Allocations: 23001)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:25:54 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 202 Accepted in 98ms (Views: 1.0ms | ActiveRecord: 1.7ms | Allocations: 8458)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:34:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 2.5ms | ActiveRecord: 1.6ms | Allocations: 22485)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:34:18 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 99ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 8099)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:38:59 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 87ms (Views: 1.1ms | ActiveRecord: 3.6ms | Allocations: 22909)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:40:53 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 63ms (Views: 1.0ms | ActiveRecord: 3.4ms | Allocations: 22857)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:41:04 -0400
+  
+SyntaxError (/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+        render json: user: UserSerializer.new(@user), j...
+                     ^~~~~
+/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+...ser: UserSerializer.new(@user), jwt: token, :include => [:an...
+...                              ^
+/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...@user), jwt: token, :include => [:animals, :searches] status...
+...                             ^~
+/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+...=> [:animals, :searches] status: :accepted
+...                         ^~~~~~):
+  
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:41:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+        render json: user: UserSerializer.new(@user), j...
+                     ^~~~~
+/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+...ser: UserSerializer.new(@user), jwt: token, :include => [:an...
+...                              ^
+/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...@user), jwt: token, :include => [:animals, :searches], statu...
+...                             ^~
+/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+...clude => [:animals, :searches], status: :accepted
+...                              ^):
+  
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tLABEL
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected ',', expecting end
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:42:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 46ms (Views: 2.0ms | ActiveRecord: 3.1ms | Allocations: 22909)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:42:08 -0400
+  
+SyntaxError (/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+...> [:animals, :searches]} status: :accepted
+...                         ^~~~~~):
+  
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/auth_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting end
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:42:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 202 Accepted in 88ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 11097)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:46:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 57ms (Views: 1.6ms | ActiveRecord: 3.1ms | Allocations: 22909)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:46:41 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.72ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 1.7ms | Allocations: 9271)
+
+
+  
+NoMethodError (undefined method `model_name' for UserSerializer:Class
+Did you mean?  module_parent):
+  
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:58:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 2, user_id: 2, animal_id: 1, created_at: "2020-09-04 18:10:57", updated_at: "2020-09-04 18:10:57">
+[active_model_serializers]   [1m[36mAnimal Load (2.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (112.95ms)
+Completed 202 Accepted in 243ms (Views: 120.3ms | ActiveRecord: 4.8ms | Allocations: 47320)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 14:58:27 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 30ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 13070)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 14:58:38 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 2, user_id: 2, animal_id: 1, created_at: "2020-09-04 18:10:57", updated_at: "2020-09-04 18:10:57">
+[active_model_serializers]   [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.66ms)
+Completed 202 Accepted in 110ms (Views: 17.4ms | ActiveRecord: 0.8ms | Allocations: 5658)
+
+

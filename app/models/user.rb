@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :favorites
     has_many :animals, through: :favorites
     has_many :searches
     has_secure_password
