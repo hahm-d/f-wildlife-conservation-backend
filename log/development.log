@@ -3577,3 +3577,716 @@ Processing by Api::V1::AuthController#create as */*
 Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
 
 
+Started GET "/static/js/main.chunk.js" for ::1 at 2020-09-04 11:27:00 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/manifest.json" for ::1 at 2020-09-04 11:27:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:30:07 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 1.6ms | ActiveRecord: 2.4ms | Allocations: 23793)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:30:38 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.22ms)
+Completed 202 Accepted in 108ms (Views: 7.3ms | ActiveRecord: 1.8ms | Allocations: 10076)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:34:39 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 156ms (Views: 1.1ms | ActiveRecord: 2.6ms | Allocations: 11934)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:35:05 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11909)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:37:22 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 11909)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:38:31 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:22 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:26 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:34 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 47ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11915)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:42 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 11898)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:52 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:53 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:39:55 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:00 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:19 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 57ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11915)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 11898)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:22 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:29 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:33 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:35 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:40:46 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 11919)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:41:16 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:41:21 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:41:39 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (6.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 6.0ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:45:59 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:46:18 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:46:32 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:46:33 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:48:36 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 202 Accepted in 92ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:48:45 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:48:51 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 89ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1073)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:50:02 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:50:09 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 202 Accepted in 88ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:50:27 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:50:53 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11916)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:51:41 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 202 Accepted in 90ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:54:31 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:55:01 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:55:15 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:55:23 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 11897)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:55:59 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 202 Accepted in 90ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 1073)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:57:06 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:57:14 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:57:18 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 89ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:58:31 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:58:36 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:58:59 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 11:59:03 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 202 Accepted in 96ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 1074)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:59:12 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 11:59:31 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:00:44 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:00:46 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:00:55 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 12:01:04 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 202 Accepted in 95ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1074)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:01:15 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 0.7ms | ActiveRecord: 1.7ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:01:15 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 12:01:19 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:01:39 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:03:23 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:03:36 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:03:39 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11916)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 12:03:42 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 202 Accepted in 88ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:04 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:10 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:25 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:33 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11905)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:42 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 11908)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:47 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:04:55 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:05:46 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:05:58 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 46ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 11915)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 12:06:06 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 202 Accepted in 88ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1072)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:07:10 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 11898)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:07:11 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:07:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:07:23 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:15 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:17 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:26 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:34 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:41 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 11917)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:48 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11896)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:50 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:08:53 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 12:08:56 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 202 Accepted in 87ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-04 12:10:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 11907)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-04 12:10:26 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Daniel"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 202 Accepted in 88ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
