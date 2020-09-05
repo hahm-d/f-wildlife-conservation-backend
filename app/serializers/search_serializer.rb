@@ -1,5 +1,4 @@
-class SearchSerializer
-    include FastJsonapi::ObjectSerializer
+class SearchSerializer < ActiveModel::Serializer
     attributes :term
     has_many :users
 end
