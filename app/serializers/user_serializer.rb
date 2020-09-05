@@ -1,4 +1,5 @@
-class UserSerializer < ActiveModel::Serializer
+class UserSerializer
+  include FastJsonapi::ObjectSerializer
   attributes :username, :avatar, :bio
   has_many :favorites
   has_many :animals, through: :favorites
