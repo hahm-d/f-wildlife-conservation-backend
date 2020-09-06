@@ -1,7 +1,11 @@
 class Api::V1::FavoritesController < ApplicationController
 
     def create
-        @favorite = Favorite.create(favorite_params, user: current_user)
+        updateParams = Hash.new
+        updateParams["animal_id"] = favorite_params["animal_id"]
+        updateParams["user_id"] = @user.id
+
+        @favorite = Favorite.create(updateParams)
         if @favorite.valid?
             render json: { favorite: @favorite.to_json }, status: :created
         else
@@ -17,6 +21,6 @@ class Api::V1::FavoritesController < ApplicationController
     private
 
     def favorite_params
-        params.require(:favorite).permit(:animal_id, :user_id)
+        params.require(:favorite).permit(:animal_id)
     end
 end
