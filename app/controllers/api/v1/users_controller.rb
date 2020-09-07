@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :update]
     
 
     def profile
@@ -17,8 +17,8 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
-        @user = User.find_by(username: current_user.username)
-        if User.update(@user.id, user_params)
+        @user = User.find(params[:id])
+        if @user.update(user_params)
             options = {:include => [:animals, :searches]}
             render json: {user: UserSerializer.new(@user, options)}, status: :accepted
         else
