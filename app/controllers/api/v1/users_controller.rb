@@ -16,6 +16,13 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find_by(username: current_user.username)
+        User.update(@user.id, user_params)
+        options = {:include => [:animals, :searches]}
+        render json: {user: UserSerializer.new(@user, options)}, status: :accepted
+    end
+
     private
 
     def user_params
