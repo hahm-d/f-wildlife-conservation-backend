@@ -17204,3 +17204,952 @@ Completed 200 OK in 57ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1278
 Completed 202 Accepted in 74ms (Views: 14.6ms | ActiveRecord: 2.0ms | Allocations: 18822)
 
 
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:12:02 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:12:02 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (3.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 63ms (Views: 1.6ms | ActiveRecord: 4.1ms | Allocations: 29744)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (1.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 2, user_id: 2, animal_id: 1, created_at: "2020-09-04 18:10:57", updated_at: "2020-09-04 18:10:57">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (78.78ms)
+Completed 202 Accepted in 187ms (Views: 79.7ms | ActiveRecord: 6.2ms | Allocations: 62012)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:12:18 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:12:18 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 12249)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 2, user_id: 2, animal_id: 1, created_at: "2020-09-04 18:10:57", updated_at: "2020-09-04 18:10:57">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.89ms)
+Completed 202 Accepted in 36ms (Views: 10.9ms | ActiveRecord: 1.0ms | Allocations: 19607)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:12:27 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:12:27 -0400
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 2, user_id: 2, animal_id: 1, created_at: "2020-09-04 18:10:57", updated_at: "2020-09-04 18:10:57">
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers]   [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 2]]
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 13324)
+
+
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (34.24ms)
+Completed 202 Accepted in 41ms (Views: 35.9ms | ActiveRecord: 0.7ms | Allocations: 20533)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:13:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 11919)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:13:26 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 11918)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:14:31 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 11895)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:15:09 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:15:34 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:17:37 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:19:34 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 86ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11897)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:19:38 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 11916)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:19:41 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:38:45 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 62ms (Views: 1.1ms | ActiveRecord: 3.2ms | Allocations: 23796)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-07 12:39:21 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}, "auth"=>{"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}}
+[31mUnpermitted parameter: :[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 11ms (Views: 2.2ms | ActiveRecord: 1.0ms | Allocations: 5032)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:39:52 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:39:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (1.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 11989)
+
+
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 935)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:39:58 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:39:58 -0400
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Processing by Api::V1::AnimalsController#index as */*
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1192)
+
+
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 12095)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:40:03 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:40:03 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Completed 401 Unauthorized in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 1562)
+
+
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 12114)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:40:05 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:40:05 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Filter chain halted as :authorized rendered or redirected
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 401 Unauthorized in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2065)
+
+
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 12013)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:40:12 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:40:12 -0400
+Processing by Api::V1::AnimalsController#index as */*
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Filter chain halted as :authorized rendered or redirected
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 12889)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:40:15 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:40:15 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 11894)
+
+
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 13106)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:42:05 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:42:05 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Processing by Api::V1::AnimalsController#index as */*
+Filter chain halted as :authorized rendered or redirected
+  [1m[36mAnimal Load (2.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+Completed 401 Unauthorized in 20ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 6590)
+
+
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 59ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 21893)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-07 12:42:52 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}, "auth"=>{"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}}
+[31mUnpermitted parameter: :[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 15ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 3846)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-07 12:43:27 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}
+[31mUnpermitted parameter: :[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 406 Not Acceptable in 31ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 10700)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "animals"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "animals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "scientific_name" varchar, "status" varchar, "population" varchar, "facts" text, "img_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "locations" text DEFAULT '')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorites"[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_animal_id" ON "favorites" ("animal_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "searches"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "searches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "term" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_searches_on_user_id" ON "searches" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "avatar" varchar, "bio" text, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_user_id" ON "afavorites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_animal_id" ON "afavorites" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5630e4c196"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_animal_id" ON "favorites" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_user_id" ON "afavorites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_animal_id" ON "afavorites" ("animal_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5630e4c196"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_animal_id" ON "favorites" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "favorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200903183936)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200903132305),
+(20200903135743),
+(20200903140816),
+(20200903142050),
+(20200903171007);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-07 16:44:27.139352"], ["updated_at", "2020-09-07 16:44:27.139352"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "0cb40a5dd7445aaaa186edf912c40140a099c127"], ["created_at", "2020-09-07 16:44:27.158531"], ["updated_at", "2020-09-07 16:44:27.158531"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "animals"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "animals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "scientific_name" varchar, "status" varchar, "population" varchar, "facts" text, "img_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "locations" text DEFAULT '')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorites"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_animal_id" ON "favorites" ("animal_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "searches"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "searches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "term" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_searches_on_user_id" ON "searches" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "avatar" varchar, "bio" text, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_user_id" ON "afavorites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_animal_id" ON "afavorites" ("animal_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5630e4c196"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_animal_id" ON "favorites" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "favorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_user_id" ON "afavorites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_animal_id" ON "afavorites" ("animal_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "animal_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5630e4c196"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_animal_id" ON "favorites" ("animal_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "favorites" ("id","user_id","animal_id","created_at","updated_at")
+                     SELECT "id","user_id","animal_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200903183936)[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200903132305),
+(20200903135743),
+(20200903140816),
+(20200903142050),
+(20200903171007);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-07 16:44:27.237712"], ["updated_at", "2020-09-07 16:44:27.237712"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-09-07 16:44:27.243732"], ["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "0cb40a5dd7445aaaa186edf912c40140a099c127"], ["created_at", "2020-09-07 16:44:27.252394"], ["updated_at", "2020-09-07 16:44:27.252394"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "African Elephant"], ["scientific_name", "Loxodonta africana"], ["status", "Vulnerable"], ["population", "415,000 in the wild"], ["facts", "The African elephant is the largest animal walking the Earth. Their herds wander through 37 countries in Africa. They are easily recognized by their trunk that is used for communication and handling objects. And their large ears allow them to radiate excess heat. Upper incisor teeth develop into tusks in African elephants and grow throughout their lifetime. There are two subspecies of African elephants—the Savanna (or bush) elephant and the Forest elephant. Savanna elephants are larger than forest elephants, and their tusks curve outwards. In addition to being smaller, forest elephants are darker and their tusks are straighter and point downward. There are also differences in the size and shape of the skull and skeleton between the two subspecies."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/882/images/hero_full/African_Elephant_7.27.2012_hero_and_circle_HI_53941.jpg?1345532748"], ["created_at", "2020-09-07 16:44:27.281747"], ["updated_at", "2020-09-07 16:44:27.281747"], ["locations", "---\n- Congo Basin\n- Coastal East Africa\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "African Wild Dog"], ["scientific_name", "Lycaon pictus"], ["status", "Endangered"], ["population", "1,409 in the wild"], ["facts", "The wild dog is one of the world’s most endangered mammals. The largest populations remain in southern Africa and the southern part of East Africa (especially Tanzania and northern Mozambique). Wild dogs are social and gather in packs of around ten individuals, but some packs number more than 40. They are opportunistic predators that hunt medium-sized ruminants, such as gazelles. In a sprint, African wild dogs can reach speeds of more than 44 miles per hour."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/10341/images/hero_full/wild_dogs-web.jpg?1447180370"], ["created_at", "2020-09-07 16:44:27.287009"], ["updated_at", "2020-09-07 16:44:27.287009"], ["locations", "---\n- Coastal East Africa\n"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Albacore Tuna"], ["scientific_name", "Thunnus alalunga"], ["status", "Near-Threatened"], ["facts", "Albacore is one of the smaller tuna species, reaching sizes between skipjack and yellowfin. They are bullet-shaped with a dark blue back and lighter blue-gray sides and belly. Albacore tuna also have very long pectoral fins and live for around 12 years. They tend to travel in single species schools, without the level of mixing as seen in other species and migrate throughout all ocean waters and the Mediterranean."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1466/images/story_full_width/tuna_102948248.jpg?1345545852"], ["created_at", "2020-09-07 16:44:27.291373"], ["updated_at", "2020-09-07 16:44:27.291373"], ["locations", "---\n- The Galápagos\n- Coral Triangle\n- Coastal East Africa\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Amazon River Dolphin"], ["scientific_name", "Scientific Name Inia geoffrensis"], ["status", "Vulnerable"], ["facts", "The Amazon river dolphin, also known as the pink river dolphin or boto, lives only in freshwater. It is found throughout much of the Amazon and Orinoco river basins in Bolivia, Brazil, Colombia, Ecuador, Guyana, Peru, and Venezuela. It is a relatively abundant freshwater cetacean with an estimated population in the tens of thousands. However, it is classified as vulnerable in certain areas due to dams that fragment and threaten certain populations, and from other threats such as contamination of rivers and lakes."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/787/images/hero_full/Amazon_River_Dolphin_7.25.2012_Circle_and_Hero_XL_257657.jpg?1470325710"], ["created_at", "2020-09-07 16:44:27.296145"], ["updated_at", "2020-09-07 16:44:27.296145"], ["locations", "---\n- Amazon\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Amur Leopard"], ["scientific_name", "Panthera pardus orientalis"], ["status", "Critically-Endangered"], ["population", "More than 84 individuals"], ["facts", "The Amur leopard is solitary. Nimble-footed and strong, it carries and hides unfinished kills so that they are not taken by other predators. It has been reported that some males stay with females after mating, and may even help with rearing the young. Several males sometimes follow and fight over a female. They live for 10-15 years, and in captivity up to 20 years. The Amur leopard is also known as the Far East leopard, the Manchurian leopard or the Korean leopard."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/878/images/hero_full/amur-leopard_99144569.jpg?1345532564"], ["created_at", "2020-09-07 16:44:27.300851"], ["updated_at", "2020-09-07 16:44:27.300851"], ["locations", "---\n- Amur-Heilong\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arctic Fox"], ["scientific_name", "Vulpes lagopus"], ["status", "Least-Concern"], ["population", "Several hundred thousand"], ["facts", "The Arctic fox is primarily a carnivore that lives inland, away from the coasts. They are dependent on the presence of smaller animals (most often lemmings) to survive.  Arctic foxes also hunt for sea birds, fish, and other marine life. Smaller rodent populations waver between times of abundance and scarcity, which leaves the Arctic fox vulnerable when these creatures are low in numbers."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/540/images/hero_full/shutterstock_103864847.jpg?1345525295"], ["created_at", "2020-09-07 16:44:27.306916"], ["updated_at", "2020-09-07 16:44:27.306916"], ["locations", "---\n- Polar Regions\n"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arctic Wolf"], ["scientific_name", "Canis lupus arctos"], ["status", "Least-Concern"], ["facts", "Often called the 'polar wolf' or 'white wolf,' Arctic wolves inhabit the Arctic regions of North America and Greenland. Thanks to its isolation, the Arctic wolf is not threatened by hunting and habitat destruction in the same way as its southern relatives."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/536/images/hero_full/shutterstock_78609682.jpg?1345525199"], ["created_at", "2020-09-07 16:44:27.311446"], ["updated_at", "2020-09-07 16:44:27.311446"], ["locations", "---\n- Arctic\n"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Asian Elephant"], ["scientific_name", "Elephas maximus indicus"], ["status", "Endangered"], ["population", "Fewer than 50,000"], ["facts", "The Asian elephant is the largest land mammal on the Asian continent. They inhabit dry to wet forest and grassland habitats in 13 range countries spanning South and Southeast Asia. While they have preferred forage plants, Asian elephants have adapted to surviving on resources that vary based on the area."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/4836/images/hero_full/Asian_elephant_Kuiburi_Thailand.jpg?1376076815"], ["created_at", "2020-09-07 16:44:27.315363"], ["updated_at", "2020-09-07 16:44:27.315363"], ["locations", "---\n- Eastern Himalayas\n- Greater Mekong\n"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beluga"], ["scientific_name", "Delphinapterus leucas"], ["status", "Near-Threatened"], ["population", "over 150,000"], ["facts", "Many populations of belugas migrate as the sea ice changes in the Arctic. They move south in the fall as the ice forms and then return to feed again in the spring, as the ice breaks up. They can also be found near river mouths, and sometimes even venture up river. Belugas feed on a variety of fish species, such as salmon and herring, as well as shrimp, crabs and mollusks."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1960/images/hero_full/beluga_whale_Kevin_Schafer_WWF-Canon.jpg?1345556165"], ["created_at", "2020-09-07 16:44:27.319527"], ["updated_at", "2020-09-07 16:44:27.319527"], ["locations", "---\n- Arctic\n"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bigeye Tuna"], ["scientific_name", "Thunnus obesus"], ["status", "Vulnerable"], ["facts", "Bigeye tuna are generally the size of yellowfin, and smaller than bluefin. They are long and streamlined, have dark metallic blue on their backs and upper sides, and are nearly white on their lower sides and belly. They can live as long as 15 years. Bigeye are found in the subtropical and tropical areas of the Atlantic (but not in the Mediterranean), Indian and Pacific Oceans."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/2546/images/portrait_overview/Bigeye_tuna_above_with_small_yellowfin_and_net_western_Pacific_Ocean_ISSF_2012.jpg?1348250583"], ["created_at", "2020-09-07 16:44:27.331907"], ["updated_at", "2020-09-07 16:44:27.331907"], ["locations", "---\n- The Galápagos\n- Coral Triangle\n- Gulf of California\n- Coastal East Africa\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Black Rhino"], ["scientific_name", "Diceros bicornis"], ["status", "Critically-Endangered"], ["population", "More than 5,500"], ["facts", "Black rhinos are the smaller of the two African rhino species. The most notable difference between white and black rhinos are their hooked upper lip. This distinguishes them from the white rhino, which has a square lip. Black rhinos are browsers rather than grazers, and their pointed lip helps them feed on leaves from bushes and trees. They have two horns, and occasionally a third, small posterior horn."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1376/images/hero_full/Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg?1345543661"], ["created_at", "2020-09-07 16:44:27.336017"], ["updated_at", "2020-09-07 16:44:27.336017"], ["locations", "---\n- Amazon\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Black Spider Monkey"], ["scientific_name", "Ateles paniscus"], ["status", "Vulnerable"], ["facts", "The black spider monkey—also known as the Guiana or red-faced spider monkey—is found in eastern South America in areas north of the Amazon River. They are one of seven species of spider monkeys found in Latin America and one of the largest primate species in South America."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1175/images/hero_full/Black_Spider_Monkey_8.1.2012_Hero_and_circle_HI_105023.jpg?1345587861"], ["created_at", "2020-09-07 16:44:27.339980"], ["updated_at", "2020-09-07 16:44:27.339980"], ["locations", "---\n- Amazon\n"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Black-footed Ferret"], ["scientific_name", "Mustela nigripes"], ["status", "Endangered"], ["population", "Approximately 370 in the wild"], ["facts", "Once thought to be globally extinct, black-footed ferrets are making a comeback. For the last thirty years, concerted efforts from many state and federal agencies, zoos, Native American tribes, conservation organizations and private landowners have given black-footed ferrets a second chance for survival. Today, recovery efforts have helped restore the black-footed ferret population to nearly 300 animals across North America. Although great strides have been made to recover the black-footed ferret, habitat loss and disease remain key threats to this highly endangered species."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/10656/images/hero_full/cbolt_09232015_DSC5470.jpg?1452537306"], ["created_at", "2020-09-07 16:44:27.344350"], ["updated_at", "2020-09-07 16:44:27.344350"], ["locations", "---\n- Northern Great Plains\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Whale"], ["scientific_name", "Balaenoptera musculus"], ["status", "Endangered"], ["population", "10,000-25,000 individuals"], ["facts", "The blue whale is the largest animal on the planet, weighing as much as 200 tons (approximately 33 elephants). The blue whale has a heart the size of a Volkswagen Beetle. Its stomach can hold one ton of krill and it needs to eat about four tons of krill each day. They are the loudest animals on Earth and are even louder than a jet engine. Their calls reach 188 decibels, while a jet reaches 140 decibels. Their low frequency whistle can be heard for hundreds of miles and is probably used to attract other blue whales."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18422/images/hero_full/shutterstock_764499823.jpg?1578408832"], ["created_at", "2020-09-07 16:44:27.349935"], ["updated_at", "2020-09-07 16:44:27.349935"], ["locations", "---\n- Southern Chile\n- Gulf of California\n- Coral Triangle\n"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bluefin Tuna"], ["scientific_name", "Thunnus Thynnus"], ["status", "Endangered"], ["facts", "Bluefin are the largest tunas and can live up to 40 years. They migrate across all oceans and can dive deeper than 3,000 feet. Bluefin tuna are made for speed: built like torpedoes, have retractable fins and their eyes are set flush to their body. They are tremendous predators from the moment they hatch, seeking out schools of fish like herring, mackerel, and even eels. They hunt by sight and have the sharpest vision of any bony fish. There are three species of bluefin: Atlantic (the largest and most endangered), Pacific, and Southern. Most catches of the Atlantic bluefin tuna are taken from the Mediterranean Sea, which is the most important bluefin tuna fishery in the world."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/2552/images/hero_full/Bluefin_tuna_253467.jpg?1348259069"], ["created_at", "2020-09-07 16:44:27.354593"], ["updated_at", "2020-09-07 16:44:27.354593"], ["locations", "---\n- Coral Triangle\n"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonobo"], ["scientific_name", "Pan paniscus"], ["status", "Endangered"], ["population", "10,000 to 50,000"], ["facts", "Bonobos and chimpanzees look very similar and both share 98.7% of their DNA with humans—making the two species our closest living relatives. Bonobos are usually a bit smaller, leaner and darker than chimpanzees. Their society is also different—bonobo groups tend to be more peaceful and are led by females. They also maintain relationships and settle conflicts through sex. However, bonobo life isn’t entirely violence free; if two groups of bonobos come together, they may engage in serious fighting."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/15180/images/hero_full/_MA_8993.JPG?1518449593"], ["created_at", "2020-09-07 16:44:27.359079"], ["updated_at", "2020-09-07 16:44:27.359079"], ["locations", "---\n- Congo Basin\n"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bornean Elephant"], ["scientific_name", "Elephas maximus borneensis"], ["status", "Endangered"], ["population", "Estimated to be fewer than 1,500"], ["facts", "The smallest Asian elephant subspecies, Bornean elephants are distinctly smaller than their mainland cousins. They have long tails that sometimes touch the ground, relatively large ears, and straighter tusks. While they are also known as Borneo pygmy elephants due to their smaller size, at 8.2-9.8 feet tall, the Bornean elephant is the largest mammal on the island."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1667/images/hero_full/HI_113471.jpg?1345600398"], ["created_at", "2020-09-07 16:44:27.364272"], ["updated_at", "2020-09-07 16:44:27.364272"], ["locations", "---\n- Borneo\n- Sumatra\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bornean Orangutan"], ["scientific_name", "Pongo pygmaeus"], ["status", "Critically-Endangered"], ["population", "About 104,700"], ["facts", "Bornean orangutan populations have declined by more than 50% over the past 60 years, and the species' habitat has been reduced by at least 55% over the past 20 years."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1145/images/hero_full/Bornean_Orangutan_8.1.2012_hero_and_circle_XL_279107.jpg?1345587030"], ["created_at", "2020-09-07 16:44:27.369202"], ["updated_at", "2020-09-07 16:44:27.369202"], ["locations", "---\n- Borneo\n- Sumatra\n"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bowhead Whale"], ["scientific_name", "Balaena mysticetus"], ["status", "Least-Concern"], ["population", "Approximately 10,000"], ["facts", "Adult bowheads are entirely black except the front part of the lower jaw which is white and prominently upturned. They can grow up to 60 feet long while still being able to leap entirely out of water. Bowheads filter their food through baleen by opening their mouths and straining plankton from the surface, the water column, or the sea floor."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/364/images/hero_full/XL_235565.jpg?1345520513"], ["created_at", "2020-09-07 16:44:27.373362"], ["updated_at", "2020-09-07 16:44:27.373362"], ["locations", "---\n- Arctic\n"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brown Bear"], ["scientific_name", "Ursus arctos"], ["status", "Least-Concern"], ["population", "Approximately 110,000"], ["facts", "Few animals have captured the imagination like brown bears. They can stand on two legs, walk on the soles of their feet, pick things up with their “fingers,” and often eat what we eat. This—coupled with their ability to communicate with one another through scratch marks left on trees, smells and sounds—establishes a similarity to our own way of life. Some of the largest living carnivores, brown bears have fallen prey to hunting and other conflicts with humans."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/16934/images/hero_full/Medium_WW266637.jpg?1551469111"], ["created_at", "2020-09-07 16:44:27.378339"], ["updated_at", "2020-09-07 16:44:27.378339"], ["locations", "---\n- Arctic\n"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Chimpanzee"], ["scientific_name", "Pan troglodytes"], ["status", "Endangered"], ["population", "172,700 to 299,700"], ["facts", "Like us, chimps are highly social animals, care for their offspring for years and can live to be over 50. In fact, chimpanzees are our closest cousins; we share about 98% of our genes."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18659/images/hero_full/Medium_WW215321.jpg?1581456540"], ["created_at", "2020-09-07 16:44:27.382644"], ["updated_at", "2020-09-07 16:44:27.382644"], ["locations", "---\n- Congo Basin\n"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Common Bottlenose Dolphin"], ["scientific_name", "Tursiops truncates"], ["status", "Least-Concern"], ["population", "600,000"], ["facts", "The bottlenose dolphin is recognized today as two distinct species—the common bottlenose dolphin and the Indo-Pacific bottlenose dolphin. The common bottlenose dolphin can be found around the world in tropical and temperate oceans. They live in groups numbering about a dozen individuals, and learn at an early age the complex social skills they need to survive. Dolphins live off fish, and they work cooperatively to herd their prey to the surface for easier feeding. Because they live so close to the shore, they are threatened by bycatch, coastal development and environmental degradation."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/12528/images/hero_full/Large_WW22277.jpg?1476749580"], ["created_at", "2020-09-07 16:44:27.387389"], ["updated_at", "2020-09-07 16:44:27.387389"], ["locations", "---\n- Ocean\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cross River Gorilla"], ["scientific_name", "Gorilla gorilla diehli"], ["status", "Critically-Endangered"], ["population", "200 to 300 individuals"], ["facts", "This subspecies of the western gorilla is very similar in appearance to the more numerous western lowland gorilla, but subtle differences can be found in the skull and tooth dimensions. Cross River gorillas live in a region populated by many humans who have encroached upon the gorilla’s territory—clearing forests for timber and to create fields for agriculture and livestock. Poaching occurs in the forests as well, and the loss of even a few of these gorillas has a detrimental effect on such a small population."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18410/images/hero_full/Medium_WW267197.jpg?1578345502"], ["created_at", "2020-09-07 16:44:27.392036"], ["updated_at", "2020-09-07 16:44:27.392036"], ["locations", "---\n- Congo Basin\n"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dugong"], ["scientific_name", "Dugong dugon"], ["status", "Vulnerable"], ["facts", "Dugongs are cousins of manatees and share a similar plump appearance, but have a dolphin fluke-like tail. And unlike manatees, which use freshwater areas, the dugong is strictly a marine mammal. Commonly known as 'sea cows', dugongs graze peacefully on sea grasses in shallow coastal waters of the Indian and western Pacific Oceans."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18406/images/hero_full/Medium_WW1221.jpg?1578344485"], ["created_at", "2020-09-07 16:44:27.397022"], ["updated_at", "2020-09-07 16:44:27.397022"], ["locations", "---\n- Coastal East Africa\n- Coral Triangle\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eastern Lowland Gorilla"], ["scientific_name", "Gorilla beringei graueri"], ["status", "Critically-Endangered"], ["facts", "The eastern lowland gorilla—also known as Grauer’s gorilla—is the largest of the four gorilla subspecies. It is distinguished from other gorillas by its stocky body, large hands and short muzzle. Despite its size, eastern lowland gorillas subsist mainly on fruit and other herbaceous materials, just like other gorilla subspecies."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1113/images/hero_full/eastern_lowland_gorilla_7.31.2012_hero_and_circle_HI_48384.jpg?1345586273"], ["created_at", "2020-09-07 16:44:27.401776"], ["updated_at", "2020-09-07 16:44:27.401776"], ["locations", "---\n- Congo Basin\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fin Whale"], ["scientific_name", "Balaenoptera physalus"], ["status", "Endangered"], ["population", "Between 50,000-90,000"], ["facts", "Some scientists have speculated that fin whales circle schools of fish with the white side facing the prey and frightening them into denser schools that are easier for the whale to catch. The fin whale, like other baleen whales, strains its food from the water through baleen plates."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/307/images/hero_full/Fin_Whale_Hero_and_Circle_Image_107654.jpg?1345568587"], ["created_at", "2020-09-07 16:44:27.406317"], ["updated_at", "2020-09-07 16:44:27.406317"], ["locations", "---\n- Gulf of California\n- Coral Triangle\n- Arctic\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Galápagos Penguin"], ["scientific_name", "Spheniscus mendiculus"], ["status", "Endangered"], ["population", "fewer than 2000"], ["facts", "This is the only penguin species found north of the equator and in the Galápagos. "], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18416/images/hero_full/flipMedium_WW1103163.jpg?1578347303"], ["created_at", "2020-09-07 16:44:27.410242"], ["updated_at", "2020-09-07 16:44:27.410242"], ["locations", "---\n- The Galápagos\n"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ganges River Dolphin"], ["scientific_name", "Platanista gangetica gangetica"], ["status", "Endangered"], ["population", "1,200–1,800"], ["facts", "Dolphins are one of the oldest creatures in the world along with some species of turtles, crocodiles and sharks. The Ganges river dolphin was officially discovered in 1801. Ganges river dolphins once lived in the Ganges-Brahmaputra-Meghna and Karnaphuli-Sangu river systems of Nepal, India, and Bangladesh. But the species is extinct from most of its early distribution ranges."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/820/images/hero_full/Ganges_River_Dolphin_7.26.2012_hero_and_circle_HI_114110.jpg?1345531213"], ["created_at", "2020-09-07 16:44:27.423373"], ["updated_at", "2020-09-07 16:44:27.423373"], ["locations", "---\n- Eastern Himalayas\n"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Giant Panda"], ["scientific_name", "Ailuropoda melanoleuca"], ["status", "Vulnerable"], ["population", "1,864 in the wild"], ["facts", "The panda, with its distinctive black and white coat, is adored by the world and considered a national treasure in China. This bear also has a special significance for WWF because it has been our logo since our founding in 1961."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18315/images/hero_full/Medium_WW230176.jpg?1576168323"], ["created_at", "2020-09-07 16:44:27.430879"], ["updated_at", "2020-09-07 16:44:27.430879"], ["locations", "---\n- Yangtze\n"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.5ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gray Whale"], ["scientific_name", "Eschrichtius robustus"], ["status", "Least-Concern"], ["population", "estimated 150 individuals (western population); stable (eastern population)"], ["facts", "Gray whales have a hump and a ridge of sharp bumps along their backs, instead of a dorsal fin. They are a type of baleen whale, which means they filter food from the water through special bristly structures in their mouths. Gray whales stay close to shore and feed in shallow water. Their well-known migrations take them between feeding and breeding areas, swimming as much as 12,000 miles round trip."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/117/images/hero_full/Gray_Whale_Hero_image_%28c%29_naturepl.com_Mark_Carwardine_WWF.jpg?1345564347"], ["created_at", "2020-09-07 16:44:27.436959"], ["updated_at", "2020-09-07 16:44:27.436959"], ["locations", "---\n- Gulf of California\n- Arctic\n"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.6ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Great White Shark"], ["scientific_name", "Carcharodon carcharias"], ["status", "Vulnerable"], ["facts", "The great white shark is the world's largest known predatory fish. It has 300 teeth, yet does not chew its food. Sharks rip their prey into mouth-sized pieces which are swallowed whole. The shark’s heavy, torpedo-shaped body allows it to cruise efficiently for long periods of time, and then suddenly switch to high speed bursts in pursuit of prey—sometimes leaping out of the water. It feeds on a broad spectrum of prey, from small fish, such as halibut, to large seals and dolphins."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1087/images/hero_full/Species_Great_White_Shark_WWF_Carlos_Aguilera.jpg?1345585501"], ["created_at", "2020-09-07 16:44:27.443645"], ["updated_at", "2020-09-07 16:44:27.443645"], ["locations", "---\n- Gulf of California\n- Southern Chile\n- The Galápagos\n- Coastal East Africa\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Greater One-Horned Rhino"], ["scientific_name", "Rhinoceros unicornis"], ["status", "Vulnerable"], ["population", "3,500+ individuals"], ["facts", "The greater one-horned rhino (or “Indian rhino”) is the largest of the rhino species. Once widespread across the entire northern part of the Indian sub-continent, rhino populations plummeted as they were hunted for sport or killed as agricultural pests. This pushed the species very close to extinction and by the start of the 20th century, around 200 wild greater one-horned rhinos remained."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1385/images/hero_full/Greater_One_Horned_Rhino_8.6.2012_Hero_and_Circle_HI_107996.jpg?1345593410"], ["created_at", "2020-09-07 16:44:27.451825"], ["updated_at", "2020-09-07 16:44:27.451825"], ["locations", "---\n- Eastern Himalayas\n"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Greater Sage-Grouse"], ["scientific_name", "Centrocercus urophasianus"], ["status", "Near-Threatened"], ["population", "100,000 to 500,000"], ["facts", "Greater sage-grouse were once found across 13 western U.S. states and 3 Canadian provinces. Unfortunately, because of oil and gas development, conversion of land for agricultural use, climate change and human development, sage-grouse only inhabit half their historic range. Well known for their spectacular mating dances performed on specific mating grounds called 'leks', these large birds are icons in the western U.S. and Canada."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/343/images/hero_full/SCR_202579.jpg?1345569310"], ["created_at", "2020-09-07 16:44:27.458023"], ["updated_at", "2020-09-07 16:44:27.458023"], ["locations", "---\n- Northern Great Plains\n"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Green Turtle"], ["scientific_name", "Chelonia mydas"], ["status", "Endangered"], ["facts", "The green turtle is one of the largest sea turtles and the only herbivore among the different species. Green turtles are in fact named for the greenish color of their cartilage and fat, not their shells. In the Eastern Pacific, a group of green turtles that have darker shells are called black turtles by the local community. Green turtles are found mainly in tropical and subtropical waters. Like other sea turtles, they migrate long distances between feeding grounds and the beaches from where they hatched. Classified as endangered, green turtles are threatened by overharvesting of their eggs, hunting of adults, being caught in fishing gear and loss of nesting beach sites."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/322/images/hero_full/Green_Turtle_Hero_image_260214.jpg?1345519611"], ["created_at", "2020-09-07 16:44:27.463685"], ["updated_at", "2020-09-07 16:44:27.463685"], ["locations", "---\n- Mesoamerican Reef\n- Coastal East Africa\n- Gulf of California\n- The Galápagos\n- Coral Triangle\n"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hawksbill Turtle"], ["scientific_name", "Eretmochelys imbricata"], ["status", "Critically-Endangered"], ["facts", "Hawksbills are named for their narrow, pointed beak. They also have a distinctive pattern of overlapping scales on their shells that form a serrated-look on the edges. These colored and patterned shells make them highly-valuable and commonly sold as 'tortoiseshell' in markets."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18418/images/hero_full/Medium_WW22305.jpg?1578407582"], ["created_at", "2020-09-07 16:44:27.468968"], ["updated_at", "2020-09-07 16:44:27.468968"], ["locations", "---\n- Mesoamerican Reef\n- Coastal East Africa\n- Coral Triangle\n"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hector's Dolphin"], ["scientific_name", "Cephalorhynchus hectori"], ["status", "Endangered"], ["population", "estimated at 7000"], ["facts", "Hector’s dolphins are the smallest and rarest marine dolphins in the world. They have distinct black facial markings, short stocky bodies and a dorsal fin shaped like a Mickey Mouse ear. There is a subspecies of Hector’s dolphin known as Maui’s dolphin that is critically endangered and estimated to have a population of only 55. They are found only in the shallow coastal waters along western shores of New Zealand’s North Island."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18412/images/hero_full/shutterstock_1205907409.jpg?1578345858"], ["created_at", "2020-09-07 16:44:27.474019"], ["updated_at", "2020-09-07 16:44:27.474019"], ["locations", "---\n- Ocean\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hippopotamus"], ["scientific_name", "Hippopotamus amphibius"], ["status", "Vulnerable"], ["population", "115,000 to 130,000"], ["facts", "The hippopotamus, also known as the “river horse,” lives along the rivers and lakes throughout sub-Saharan Africa. Weighing up to 8,000 pounds, the hippo is the heaviest land animal after the elephant. Hippos seek refuge from the heat by living in water during the day, and at night they come ashore to feed on short, soft grasses and fallen fruit. The eyes and ears of a hippopotamus are on top of its head, so it can keep watch for enemies—mainly crocodiles—while lying low in the water. These giants are currently at risk from habitat loss."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/16937/images/hero_full/Medium_WW1113453.jpg?1551472667"], ["created_at", "2020-09-07 16:44:27.478388"], ["updated_at", "2020-09-07 16:44:27.478388"], ["locations", nil]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Humphead Wrasse"], ["scientific_name", "Cheilinus undulatus"], ["status", "Endangered"], ["facts", "The humphead wrasse is an enormous coral reef fish—growing over six feet long—with a prominent bulge on its forehead. Some of them live to be over 30 years old. They roam through coral reefs in search of hard shelled prey such as mollusks, starfish, or crustaceans."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/18408/images/hero_full/Medium_WW180520.jpg?1578344928"], ["created_at", "2020-09-07 16:44:27.482205"], ["updated_at", "2020-09-07 16:44:27.482205"], ["locations", "---\n- Coral Triangle\n- Coastal East Africa\n"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Indian Elephant"], ["scientific_name", "Elephas maximus indicus"], ["status", "Endangered"], ["population", "20,000 – 25,000"], ["facts", "Indian elephants may spend up to 19 hours a day feeding and they can produce about 220 pounds of dung per day while wandering over an area that can cover up to 125 square miles. This helps to disperse germinating seeds. They feed mainly on grasses, but large amounts of tree bark, roots, leaves and small stems are also eaten. Cultivated crops such as bananas, rice and sugarcane are favored foods as well. Since they need to drink at least once a day, these elephants are always close to a source of fresh water."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1713/images/hero_full/HI_47311.jpg?1345601529"], ["created_at", "2020-09-07 16:44:27.486400"], ["updated_at", "2020-09-07 16:44:27.486400"], ["locations", "---\n- India\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Indus River Dolphin"], ["scientific_name", "Platanista minor"], ["status", "Endangered"], ["population", "1,816"], ["facts", "Indus river dolphins are believed to have originated in the ancient Tethys Sea. When the sea dried up approximately 50 million years ago, the dolphins were forced to adapt to its only remaining habitat—rivers. Today, they can only be found in the lower parts of the Indus River in Pakistan and in River Beas, a tributary of the Indus River in Punjab, India. In Pakistan, their numbers declined dramatically after the construction of an irrigation system, and most dolphins are confined to a 750 mile stretch of the river and divided into isolated populations by six barrages. They have adapted to life in the muddy river and are functionally blind. They rely on echolocation to navigate, communicate and hunt prey including prawns, catfish, and carp."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/14861/images/hero_full/Indus_River_Dolphin.jpg?1513270520"], ["created_at", "2020-09-07 16:44:27.490332"], ["updated_at", "2020-09-07 16:44:27.490332"], ["locations", "---\n- Pakistan\n"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Irrawaddy Dolphin"], ["scientific_name", "Orcaella brevirostris"], ["status", "Endangered"], ["facts", "Irrawaddy dolphins are found in coastal areas in South and Southeast Asia, and in three rivers: the Ayeyarwady (Myanmar), the Mahakam (Indonesian Borneo) and the Mekong. The Mekong River Irrawaddy dolphins inhabit a 118-mile stretch of the river between Cambodia and Lao PDR and are scarce—just 92 individuals are estimated to still exist. These dolphins have a bulging forehead, short beak, and 12-19 teeth on each side of both jaws."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/2715/images/hero_full/Mekong_Irrawaddy_Dolphin_breaching_%28c%29_WWF_Greater_Mekong.jpg?1421877230"], ["created_at", "2020-09-07 16:44:27.494148"], ["updated_at", "2020-09-07 16:44:27.494148"], ["locations", "---\n- Greater Mekong\n"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jaguar"], ["scientific_name", "Panthera onca"], ["status", "Near-Threatened"], ["facts", "Jaguars are strong swimmers and climbers and require large areas of tropical rain forest and stretches of riverbank to survive. Hunting and habitat loss due to deforestation continue to threaten the survival of these marvelous cats. WWF has worked with the government of Brazil to successfully protect large blocks of Amazon forest for the jaguar. In Peru, WWF continues to track jaguars to learn more about their habitat requirements."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/1679/images/hero_full/Responsible_Forestry_8.10.2012_Biodiversiry_Loss_HI_7474.jpg?1345600687"], ["created_at", "2020-09-07 16:44:27.498916"], ["updated_at", "2020-09-07 16:44:27.498916"], ["locations", "---\n- Amazon\n- Pantanal\n"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "population", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Javan Rhino"], ["scientific_name", "Rhinoceros sondaicus"], ["status", "Critically-Endangered"], ["population", "58–68"], ["facts", "Javan rhinos are the most threatened of the five rhino species, with only 58-68 individuals that live only in Ujung Kulon National Park in Java, Indonesia. Javan rhinos once lived throughout northeast India and Southeast Asia. Vietnam’s last Javan rhino was poached in 2010."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/9496/images/hero_full/_H9A0249.jpg?1436885827"], ["created_at", "2020-09-07 16:44:27.504841"], ["updated_at", "2020-09-07 16:44:27.504841"], ["locations", "---\n- South-east Asia\n"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "scientific_name", "status", "facts", "img_url", "created_at", "updated_at", "locations") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Leatherback Turtle"], ["scientific_name", "Dermochelys coriacea"], ["status", "Vulnerable"], ["facts", "They are the largest sea turtle species and also one of the most migratory, crossing both the Atlantic and Pacific Oceans. Pacific leatherbacks migrate from nesting beaches in the Coral Triangle all the way to the California coast to feed on the abundant jellyfish every summer and fall."], ["img_url", "https://c402277.ssl.cf1.rackcdn.com/photos/317/images/hero_full/SCR_289416.jpg?1345568766"], ["created_at", "2020-09-07 16:44:27.509328"], ["updated_at", "2020-09-07 16:44:27.509328"], ["locations", "---\n- Mesoamerican Reef\n- Coastal East Africa\n- Gulf of California\n- The Galápagos\n- Coral Triangle\n"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:44:42 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:44:42 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.65ms)
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 21489)
+
+
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 40ms (Views: 32.7ms | ActiveRecord: 0.0ms | Allocations: 26506)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:45:06 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:45:06 -0400
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Processing by Api::V1::AnimalsController#index as */*
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 950)
+
+
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 12065)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:47:00 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 11934)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:47:31 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:47:31 -0400
+Processing by Api::V1::AnimalsController#index as */*
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mAnimal Load (2.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 12830)
+
+
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 12436)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:50:25 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 0.9ms | Allocations: 11908)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-07 12:51:09 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}
+[31mUnpermitted parameter: :[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 406 Not Acceptable in 33ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 11383)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:52:00 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 11894)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-07 12:52:12 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}, "auth"=>{"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}}
+[31mUnpermitted parameter: :[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1065)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:53:11 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 11919)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:53:11 -0400
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1373)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:53:11 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:53:20 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:53:21 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:53:21 -0400
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1896)
+
+
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 11975)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-07 12:53:30 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}, "auth"=>{"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}}
+[31mUnpermitted parameter: :[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 907)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAnimal Load (1.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for ::1 at 2020-09-07 12:55:24 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}
+[31mUnpermitted parameter: :[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 406 Not Acceptable in 35ms (Views: 3.3ms | ActiveRecord: 1.9ms | Allocations: 15354)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:56:19 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 34ms (Views: 0.7ms | ActiveRecord: 3.4ms | Allocations: 20775)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:56:19 -0400
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1372)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:56:19 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 11909)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-07 12:56:30 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", ""=>"Xenon1994"}}
+[31mUnpermitted parameter: :[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 406 Not Acceptable in 11ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 4926)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:57:24 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:57:24 -0400
+Processing by Api::V1::UsersController#profile as */*
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:57:24 -0400
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1091)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (3.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 54ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 11925)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-07 12:57:37 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "ritahartnell"], ["password_digest", "$2a$10$RPu5yz7s05AL3wtXuW9JTuk3lKueULJWeKqE60SkKGndXnyLxzahW"], ["created_at", "2020-09-07 16:57:38.026866"], ["updated_at", "2020-09-07 16:57:38.026866"]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "ritahartnell"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:13:in `create'
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:13:in `create'
+[active_model_serializers]   [1m[36mSearch Load (0.7ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (32.96ms)
+Completed 201 Created in 162ms (Views: 31.0ms | ActiveRecord: 6.6ms | Allocations: 20814)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-07 12:58:13 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.54ms)
+Completed 202 Accepted in 91ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 5432)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:58:24 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 11916)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:58:25 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:58:25 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::V1::AnimalsController#index as */*
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAnimal Load (1.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 12607)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.11ms)
+Completed 202 Accepted in 60ms (Views: 31.0ms | ActiveRecord: 0.8ms | Allocations: 19489)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:58:29 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 11916)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-07 12:58:30 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-07 12:58:30 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 12641)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.09ms)
+Completed 202 Accepted in 37ms (Views: 12.9ms | ActiveRecord: 1.0ms | Allocations: 18816)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-09-07 12:58:40 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.93ms)
+Completed 202 Accepted in 94ms (Views: 4.9ms | ActiveRecord: 0.7ms | Allocations: 5251)
+
+
