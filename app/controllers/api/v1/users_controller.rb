@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :update]
+    skip_before_action :authorized, only: [:create, :update, :destroy]
     
 
     def profile
@@ -24,6 +24,11 @@ class Api::V1::UsersController < ApplicationController
         else
             render json: {error: 'failed to update user'}, status: :not_acceptable
         end
+    end
+
+    def destroy
+        User.destroy(params[:id])
+        render json: {status: :accepted}
     end
 
     private

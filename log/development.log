@@ -18153,3 +18153,785 @@ Processing by Api::V1::AuthController#create as */*
 Completed 202 Accepted in 94ms (Views: 4.9ms | ActiveRecord: 0.7ms | Allocations: 5251)
 
 
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 09:56:17 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 09:56:17 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 80ms (Views: 1.6ms | ActiveRecord: 3.4ms | Allocations: 23814)
+
+
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (53.14ms)
+Completed 202 Accepted in 108ms (Views: 55.2ms | ActiveRecord: 5.0ms | Allocations: 24622)
+
+
+Started PATCH "/api/v1/users/1" for ::1 at 2020-09-08 09:56:30 -0400
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"username"=>"ritahartnell", "avatar"=>nil, "bio"=>"hello there", "id"=>"1", "user"=>{"avatar"=>nil, "bio"=>"hello there", "username"=>"ritahartnell"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "ritahartnell"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mUser Update (3.3ms)[0m  [1m[33mUPDATE "users" SET "bio" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["bio", "hello there"], ["updated_at", "2020-09-08 13:56:30.064478"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23:in `update'
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23:in `update'
+[active_model_serializers]   [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.6ms)
+Completed 202 Accepted in 37ms (Views: 14.9ms | ActiveRecord: 6.9ms | Allocations: 9390)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 09:57:09 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 09:57:09 -0400
+Processing by Api::V1::AnimalsController#index as */*
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mAnimal Load (6.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 200 OK in 102ms (Views: 5.0ms | ActiveRecord: 6.6ms | Allocations: 12796)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (1.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (2.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (57.04ms)
+Completed 202 Accepted in 151ms (Views: 55.5ms | ActiveRecord: 7.1ms | Allocations: 18307)
+
+
+Started PATCH "/api/v1/users/1" for ::1 at 2020-09-08 09:59:37 -0400
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"username"=>"ritahartnell", "avatar"=>nil, "bio"=>"hello..how are you...", "id"=>"1", "user"=>{"avatar"=>nil, "bio"=>"hello..how are you...", "username"=>"ritahartnell"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:20:in `update'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "ritahartnell"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "bio" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["bio", "hello..how are you..."], ["updated_at", "2020-09-08 13:59:37.364461"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `update'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23:in `update'
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23:in `update'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.18ms)
+Completed 202 Accepted in 29ms (Views: 13.1ms | ActiveRecord: 3.9ms | Allocations: 8820)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 09:59:46 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 09:59:46 -0400
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.96ms)
+Completed 202 Accepted in 24ms (Views: 18.4ms | ActiveRecord: 1.0ms | Allocations: 7957)
+
+
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 11916)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:21:02 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:21:02 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (5.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 108ms (Views: 3.9ms | ActiveRecord: 5.1ms | Allocations: 13390)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.5ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (25.63ms)
+Completed 202 Accepted in 133ms (Views: 27.5ms | ActiveRecord: 2.4ms | Allocations: 18935)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:21:20 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:21:20 -0400
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 11917)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.45ms)
+Completed 202 Accepted in 382ms (Views: 71.5ms | ActiveRecord: 1.3ms | Allocations: 19658)
+
+
+Started POST "/api/v1/favorites" for ::1 at 2020-09-08 10:21:47 -0400
+Processing by Api::V1::FavoritesController#create as */*
+  Parameters: {"animal_id"=>5, "favorite"=>{"animal_id"=>5}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mAnimal Load (1.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mFavorite Create (5.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["animal_id", 5], ["created_at", "2020-09-08 14:21:47.665935"], ["updated_at", "2020-09-08 14:21:47.665935"]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.69ms)
+Completed 201 Created in 56ms (Views: 4.1ms | ActiveRecord: 9.0ms | Allocations: 10806)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:22:26 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (1.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:22:26 -0400
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+  [1m[36mAnimal Load (0.9ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 13322)
+
+
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (139.19ms)
+Completed 202 Accepted in 146ms (Views: 140.2ms | ActiveRecord: 2.0ms | Allocations: 31576)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:25:04 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:25:04 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (1.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 86ms (Views: 6.2ms | ActiveRecord: 1.8ms | Allocations: 12665)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.5ms)
+Completed 202 Accepted in 173ms (Views: 139.9ms | ActiveRecord: 2.1ms | Allocations: 19780)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:26:19 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:26:19 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 12644)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.97ms)
+Completed 202 Accepted in 73ms (Views: 60.3ms | ActiveRecord: 3.1ms | Allocations: 19757)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:26:23 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:26:23 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 12645)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.22ms)
+Completed 202 Accepted in 70ms (Views: 20.3ms | ActiveRecord: 1.2ms | Allocations: 19230)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:28:06 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:28:07 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (1.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 1.6ms | ActiveRecord: 1.1ms | Allocations: 12664)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.79ms)
+Completed 202 Accepted in 71ms (Views: 15.7ms | ActiveRecord: 1.5ms | Allocations: 19250)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:32:16 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:32:16 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 200 OK in 43ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 12324)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.4ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (23.28ms)
+Completed 202 Accepted in 278ms (Views: 228.2ms | ActiveRecord: 1.6ms | Allocations: 19238)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:32:19 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:32:19 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::V1::AnimalsController#index as */*
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAnimal Load (0.8ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 200 OK in 64ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 12961)
+
+
+[active_model_serializers]   [1m[36mFavorite Load (1.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (23.22ms)
+Completed 202 Accepted in 93ms (Views: 84.7ms | ActiveRecord: 2.2ms | Allocations: 19226)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:32:49 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:32:49 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 200 OK in 95ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 12357)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.59ms)
+Completed 202 Accepted in 118ms (Views: 16.4ms | ActiveRecord: 1.1ms | Allocations: 19255)
+
+
+Started POST "/api/v1/favorites" for ::1 at 2020-09-08 10:32:58 -0400
+Processing by Api::V1::FavoritesController#create as */*
+  Parameters: {"animal_id"=>2, "favorite"=>{"animal_id"=>2}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mFavorite Create (2.6ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["animal_id", 2], ["created_at", "2020-09-08 14:32:58.807000"], ["updated_at", "2020-09-08 14:32:58.807000"]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 201 Created in 21ms (Views: 2.8ms | ActiveRecord: 4.7ms | Allocations: 6436)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:33:42 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:33:42 -0400
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+  [1m[36mAnimal Load (2.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 43ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 12611)
+
+
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (57.68ms)
+Completed 202 Accepted in 68ms (Views: 60.0ms | ActiveRecord: 1.7ms | Allocations: 20843)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:34:46 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:34:46 -0400
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (1.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 170ms (Views: 1.7ms | ActiveRecord: 1.4ms | Allocations: 12644)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.94ms)
+Completed 202 Accepted in 212ms (Views: 31.6ms | ActiveRecord: 2.0ms | Allocations: 19572)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:35:06 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:35:06 -0400
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+  [1m[36mAnimal Load (0.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 38ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 12630)
+
+
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (52.01ms)
+Completed 202 Accepted in 61ms (Views: 55.0ms | ActiveRecord: 1.0ms | Allocations: 20834)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:35:12 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:35:12 -0400
+[active_model_serializers]   [1m[36mSearch Load (2.8ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+Processing by Api::V1::AnimalsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.27ms)
+  [1m[36mAnimal Load (0.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 202 Accepted in 44ms (Views: 33.4ms | ActiveRecord: 3.9ms | Allocations: 9301)
+
+
+Completed 200 OK in 34ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 11953)
+
+
+Started POST "/api/v1/favorites" for ::1 at 2020-09-08 10:35:40 -0400
+Processing by Api::V1::FavoritesController#create as */*
+  Parameters: {"animal_id"=>3, "favorite"=>{"animal_id"=>3}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mFavorite Create (2.7ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "animal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["animal_id", 3], ["created_at", "2020-09-08 14:35:40.868272"], ["updated_at", "2020-09-08 14:35:40.868272"]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 30ms (Views: 2.7ms | ActiveRecord: 6.9ms | Allocations: 6435)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:37:13 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:37:13 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnimal Load (4.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 200 OK in 160ms (Views: 14.2ms | ActiveRecord: 4.0ms | Allocations: 13390)
+
+
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (5.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.3ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (110.91ms)
+Completed 202 Accepted in 307ms (Views: 253.6ms | ActiveRecord: 6.6ms | Allocations: 21219)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:38:08 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:38:08 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::V1::AnimalsController#index as */*
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAnimal Load (0.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+Completed 200 OK in 89ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 13580)
+
+
+[active_model_serializers] No serializer found for resource: #<Favorite id: 1, user_id: 1, animal_id: 5, created_at: "2020-09-08 14:21:47", updated_at: "2020-09-08 14:21:47">
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (112.59ms)
+Completed 202 Accepted in 127ms (Views: 118.0ms | ActiveRecord: 1.1ms | Allocations: 20454)
+
+
+Started DELETE "/api/v1/users/1" for ::1 at 2020-09-08 10:49:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/melodysoriano/Flatiron/code/Mod 4/Project/f-wildlife-conservation-backend/app/controllers/api/v1/users_controller.rb:32: syntax error, unexpected tLABEL
+        render json: status: :accepted
+                     ^~~~~~~):
+  
+app/controllers/api/v1/users_controller.rb:32: syntax error, unexpected tLABEL
+app/controllers/api/v1/users_controller.rb:32: syntax error, unexpected tLABEL
+app/controllers/api/v1/users_controller.rb:32: syntax error, unexpected tLABEL
+Started DELETE "/api/v1/users/1" for ::1 at 2020-09-08 10:50:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started DELETE "/api/v1/users/1" for ::1 at 2020-09-08 10:50:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started DELETE "/api/v1/users/1" for ::1 at 2020-09-08 10:51:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started DELETE "/api/v1/users/1" for ::1 at 2020-09-08 10:52:45 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#destroy as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 3705)
+
+
+Started DELETE "/api/v1/users/1" for ::1 at 2020-09-08 10:53:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#destroy as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mFavorite Destroy (0.6ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mFavorite Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mFavorite Destroy (0.1ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 50ms (Views: 2.2ms | ActiveRecord: 4.4ms | Allocations: 19772)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:53:57 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:53:57 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 3131)
+
+
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.6ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 71ms (Views: 0.9ms | ActiveRecord: 1.8ms | Allocations: 20517)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 10:54:29 -0400
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:54:29 -0400
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorized rendered or redirected
+Processing by Api::V1::AnimalsController#index as */*
+Completed 401 Unauthorized in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2996)
+
+
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 12123)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 10:55:36 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 53ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 11896)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 11:06:40 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (5.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 4.8ms | ActiveRecord: 5.4ms | Allocations: 11944)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 11:07:18 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (10.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 153ms (Views: 3.6ms | ActiveRecord: 10.5ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 11:07:32 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (2.7ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 110ms (Views: 0.5ms | ActiveRecord: 2.7ms | Allocations: 11894)
+
+
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 11:07:40 -0400
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mAnimal Load (0.5ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+Completed 200 OK in 173ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 11899)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-09-08 11:18:29 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"ritahartnell", "password"=>"[FILTERED]"}}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "ritahartnell"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "ritahartnell"], ["password_digest", "$2a$10$D.odeQXWMVE6kRu.Nx2hM.BOD4JKMzU5Fwz1blGktzuOKfFpHTjEK"], ["created_at", "2020-09-08 15:18:29.411918"], ["updated_at", "2020-09-08 15:18:29.411918"]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "ritahartnell"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `create'
+[active_model_serializers]   [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:13:in `create'
+[active_model_serializers]   [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:13:in `create'
+[active_model_serializers]   [1m[36mSearch Load (0.8ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (36.31ms)
+Completed 201 Created in 294ms (Views: 35.0ms | ActiveRecord: 10.6ms | Allocations: 14735)
+
+
+Started DELETE "/api/v1/users/2" for ::1 at 2020-09-08 11:18:40 -0400
+Processing by Api::V1::UsersController#destroy as */*
+  Parameters: {"id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 29ms (Views: 1.0ms | ActiveRecord: 5.9ms | Allocations: 3804)
+
+
