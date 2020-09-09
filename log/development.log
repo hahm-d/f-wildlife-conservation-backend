@@ -20549,3 +20549,49 @@ Completed 202 Accepted in 45ms (Views: 38.7ms | ActiveRecord: 1.0ms | Allocation
 Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 14487)
 
 
+Started GET "/api/v1/profile" for ::1 at 2020-09-08 19:31:15 -0400
+Started GET "/api/v1/animals" for ::1 at 2020-09-08 19:31:15 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#profile as */*
+Processing by Api::V1::AnimalsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAnimal Load (6.0ms)[0m  [1m[34mSELECT "animals".* FROM "animals"[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  ↳ app/controllers/api/v1/animals_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 113ms (Views: 2.0ms | ActiveRecord: 6.8ms | Allocations: 29786)
+
+
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[active_model_serializers]   [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mAnimal Load (0.4ms)[0m  [1m[34mSELECT "animals".* FROM "animals" INNER JOIN "favorites" ON "animals"."id" = "favorites"."animal_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers]   [1m[36mSearch Load (0.6ms)[0m  [1m[34mSELECT "searches".* FROM "searches" WHERE "searches"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `profile'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (47.04ms)
+Completed 202 Accepted in 187ms (Views: 49.6ms | ActiveRecord: 3.6ms | Allocations: 48983)
+
+
+Started DELETE "/api/v1/users/3" for ::1 at 2020-09-08 19:31:32 -0400
+Processing by Api::V1::UsersController#destroy as */*
+  Parameters: {"id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[36mUser Destroy (2.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 30ms (Views: 1.0ms | ActiveRecord: 13.4ms | Allocations: 3961)
+
+
