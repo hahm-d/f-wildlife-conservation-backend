@@ -468,6 +468,166 @@
       "population": null,
       "locations": ["Mesoamerican Reef", "Coastal East Africa", "Gulf of California", "The Galápagos", "Coral Triangle"],
       "facts": "They are the largest sea turtle species and also one of the most migratory, crossing both the Atlantic and Pacific Oceans. Pacific leatherbacks migrate from nesting beaches in the Coral Triangle all the way to the California coast to feed on the abundant jellyfish every summer and fall."
+      },
+      {
+      "id": 45,
+      "name": "Loggerhead Turtle",
+      "scientific_name": "Caretta caretta",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/297/images/hero_full/MID_110648loggerhead-hero.jpg?1345568357",
+      "population": null,
+      "locations": ["Mesoamerican Reef", "Coastal East Africa", "Gulf of California", "The Galápagos", "Coral Triangle"],
+      "facts": "Loggerhead turtles are named for their large heads that support powerful jaw muscles, allowing them to crush hard-shelled prey like clams and sea urchins. They are less likely to be hunted for their meat or shell compared to other sea turtles. Bycatch, the accidental capture of marine animals in fishing gear, is a serious problem for loggerhead turtles because they frequently come in contact with fisheries."
+      },
+      {
+      "id": 46,
+      "name": "Macaw",
+      "scientific_name": "Ara ararauna",
+      "status": "Least-Concern",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/291/images/hero_full/Macaw_hero_image_%28c%29_Zig_Koch_WWF.jpg?1345568195",
+      "population": null,
+      "locations": ["Amazon", "Pantanal"],
+      "facts": "The Amazonian rain forest is a bird lover's paradise, home to over a thousand different species, including the blue-and-yellow macaw. Macaws are highly intelligent, mate for life and can live up to 60 years."
+      },
+      {
+      "id": 47,
+      "name": "Marine Iguana",
+      "scientific_name": "Amblyrhynchus cristatus",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18414/images/hero_full/Medium_WW288386.jpg?1578346424",
+      "population": null,
+      "locations": ["The Galápagos"],
+      "facts": "One of the main nesting zones for iguanas is located on a central tourist beach in the waterfront area of Puerto Villamil on Isabela Island. For several years, the Galápagos National Park protected only the central part of the nesting zone."
+      },
+      {
+      "id": 48,
+      "name": "Mountain Gorilla",
+      "scientific_name": "Gorilla beringei beringei",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18374/images/hero_full/Mountain_Gorilla_Silverback_WW22557.jpg?1576768689",
+      "population": "More than 1,000",
+      "locations": ["Congo Basin"],
+      "facts": "As their name implies, mountain gorillas live in forests high in the mountains, at elevations of 8,000 to 13,000 feet. They have thicker fur, and more of it, compared to other great apes. The fur helps them to survive in a habitat where temperatures often drop below freezing."
+      },
+      {
+      "id": 49,
+      "name": "Mountain Plover",
+      "scientific_name": "Charadrius montanus",
+      "status": "Near-Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/567/images/hero_full/Mountain_Plover_shutterstock_84548434.jpg?1345574316",
+      "population": "15,000-20,000",
+      "locations": ["Northern Great Plains"],
+      "facts": "Mountain plovers are one of only 12 grassland birds endemic to the western Great Plains. They nest across the western Great Plains and Rocky Mountain states, from the Canadian border to northern Mexico, and winter in California, southern Arizona, Texas and Mexico."
+      },
+      {
+      "id": 50,
+      "name": "Narwhal",
+      "scientific_name": "Monodon monoceros",
+      "status": "Near-Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/14875/images/hero_full/Medium_WW248926.jpg?1513623521",
+      "population": "more than 80,000",
+      "locations": ["Arctic"],
+      "facts": "The narwhal looks like a cross between a whale and a unicorn with its long, spiraled tusk jutting from its head. Males most commonly have tusks, and some may even have two."
+      },
+      {
+      "id": 51,
+      "name": "North Atlantic Right Whale",
+      "scientific_name": "Eubalaena glacialis",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/107/images/hero_full/HI_238350.jpg?1345564177",
+      "population": "300-350 individuals",
+      "locations": ["Ocean"],
+      "facts": "The North Atlantic right whale can easily be identified by the white calluses on its head, which are very noticeable against the whale’s dark gray body. It has a broad back without a dorsal fin and a long arching mouth that begins above the eye."
+      },
+      {
+      "id": 52,
+      "name": "Orangutan",
+      "scientific_name": "Pongo abelii, Pongo pygmaeus",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/191/images/hero_full/LG-Orangutans_Hero_image_%28c%29_naturepl.com_Anup_Shah_WWF.jpg?1345566250",
+      "population": "about 104,700 (Bornean), 13,846 (Sumatran), 800 (Tapanuli)",
+      "locations": ["Forests in SouthEast Asia"],
+      "facts": "A third species of orangutan was announced in November, 2017. With no more than 800 individuals in existence, the Tapanuli orangutan is the most endangered of all great apes."
+      },
+      {
+      "id": 53,
+      "name": "Plains Bison",
+      "scientific_name": "Bison bison bison",
+      "status": "Near-Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/10646/images/hero_full/ThomasSzajner_20141004-20141004-KB1A5172.jpg?1452530740",
+      "population": "20,504",
+      "locations": ["Northern Great Plains"],
+      "facts": "Once numbering 30 million-60 million in North America, their numbers were decimated in just a few decades as expansion pressed westward. No other species on Earth has declined so quickly. "
+      },
+      {
+      "id": 54,
+      "name": "Polar Bear",
+      "scientific_name": "Ursus maritimus",
+      "status": "Vulnerable",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18695/images/hero_full/Polar_bear_on_ice_in_Svalbard_Norway_WW294883.jpg?1582733867",
+      "population": "22,000-31,000",
+      "locations": ["Arctic"],
+      "facts": "Polar bears rely heavily on sea ice for traveling, hunting, resting, mating and, in some areas, maternal dens. But because of ongoing and potential loss of their sea ice habitat resulting from climate change–the primary threat to polar bears Arctic-wide–polar bears were listed as a threatened species in the US under the Endangered Species Act in May 2008."
+      },
+      {
+      "id": 55,
+      "name": "Red Panda",
+      "scientific_name": "Ailurus fulgens",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/14894/images/hero_full/XL_279141.jpg?1513695574",
+      "population": "less than 10,000 individuals",
+      "locations": ["Eastern Himalayas"],
+      "facts": "The red panda is slightly larger than a domestic cat with a bear-like body and thick russet fur. The belly and limbs are black, and there are white markings on the side of the head and above its small eyes. "
+      },
+      {
+      "id": 56,
+      "name": "Saola",
+      "scientific_name": "Pseudoryx nghetinhensis",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/156/images/hero_full/LG-Saola_Hero_image_%28c%29_David_Hulse_WWF_Canon.jpg?1345515547",
+      "population": null,
+      "locations": ["Greater Mekong"],
+      "facts": "The saola was discovered in May 1992 during a joint survey carried out by the Ministry of Forestry of Vietnam and WWF in north-central Vietnam. The team found a skull with unusual long, straight horns in a hunter's home and knew it was something extraordinary. The find proved to be the first large mammal new to science in more than 50 years and one of the most spectacular zoological discoveries of the 20th century."
+      },
+      {
+      "id": 57,
+      "name": "Sea Lions",
+      "scientific_name": "Zalophus wollebaeki",
+      "status": "Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/18417/images/hero_full/Medium_WW288551.jpg?1578407161",
+      "population": null,
+      "locations": ["The Galápagos"],
+      "facts": "Sea lions haul out in large colonies on rocks and sandy shores on the Islands. They move into the water to feed and cool off as needed."
+      },
+      {
+      "id": 58,
+      "name": "Sunda Tiger",
+      "scientific_name": "Panthera tigris sondaica",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/2090/images/hero_full/Sumatran-Tiger-Hero.jpg?1345559303",
+      "population": "Less than 400",
+      "locations": ["SouthEast Asia"],
+      "facts": "In Indonesia, anyone caught hunting tigers could face jail time and steep fines. But despite increased efforts in tiger conservation—including strengthening law enforcement and antipoaching capacity—a substantial market remains in Sumatra and other parts of Asia for tiger parts and products. Sunda tigers are losing their habitat and prey fast, and poaching is an ever-present threat."
+      },
+      {
+      "id": 59,
+      "name": "Sumatran Rhino",
+      "scientific_name": "Dicerorhinus sumatrensis",
+      "status": "Critically-Endangered",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1417/images/hero_full/Photo_1_Sumatran_rhino_3_%28c%29_Bill_Konstant_International_Rhino_Foundation.jpg?1345594108",
+      "population": "80",
+      "locations": ["Borneo","Sumatra"],
+      "facts": "The Sumatran rhino once roamed as far away as the foothills of the Eastern Himalayas in Bhutan and eastern India, through Myanmar, Thailand, possibly to Vietnam and China, and south through the Malay Peninsula. Today, the species only survives on the Indonesian islands of Sumatra and Borneo. Experts believe the third subspecies is probably extinct."
+      },
+      {
+      "id": 60,
+      "name": "White Rhino",
+      "scientific_name": "Ceratotherium simum",
+      "status": "Near-Threatened",
+      "img_url": "https://c402277.ssl.cf1.rackcdn.com/photos/1467/images/hero_full/White_Rhino_8.7.2012_Hero_And_Circleb_HI_58736.jpg?1345595555",
+      "population": "Less than 17,000",
+      "locations": ["Coastal East Africa"],
+      "facts": "White rhinos have complex social structures. Groups of sometimes 14 rhinos may form, notably females with calves. Adult males defend territories of roughly one square mile, which they mark with vigorously scraped dung piles. The home range for adult females can be more than seven times larger, depending on habitat quality and population density. "
       }
     ]
   }
